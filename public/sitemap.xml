@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  Sitemap for Yash Rana's Portfolio Website (https://yashrana.tech)
+  Generated on: 2025-07-22
+  Guidelines followed:
+    - https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
+    - Only canonical and indexable URLs are listed
+    - Sections with fragment identifiers (#) are not strictly necessary but included for SPA awareness
+
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://yashrana.tech/</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Section (optional in sitemap, better covered via internal linking and JSON-LD) -->
+  <url>
+    <loc>https://yashrana.tech/#about</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://yashrana.tech/#projects</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Experience Section -->
+  <url>
+    <loc>https://yashrana.tech/#experience</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Certifications Section -->
+  <url>
+    <loc>https://yashrana.tech/#certifications</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://yashrana.tech/#contact</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

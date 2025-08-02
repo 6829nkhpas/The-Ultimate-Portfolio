@@ -1,0 +1,76 @@
+# robots.txt for yashrana.tech
+# Last updated: 2025-07-22
+# This file tells search engine crawlers how to interact with your site.
+
+# ==============================
+# Basic Rules for All Crawlers
+# ==============================
+
+User-agent: *
+Allow: /
+
+# ==============================
+# Sitemap Declaration
+# ==============================
+
+Sitemap: https://yashrana.tech/sitemap.xml
+
+# ==============================
+# Disallowed Paths (For Privacy & Security)
+# ==============================
+
+# Admin panels or CMS routes
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /settings/
+
+# Internal API or backend routes
+Disallow: /api/
+Disallow: /server/
+Disallow: /internal/
+
+# Private user data (if applicable)
+Disallow: /user/
+Disallow: /account/
+
+# Temporary or dev folders (if deployed accidentally)
+Disallow: /temp/
+Disallow: /test/
+Disallow: /dev/
+
+# ==============================
+# SEO Best Practices
+# ==============================
+
+# ✅ Make sure to:
+# - Submit sitemap.xml in Google Search Console and Bing Webmaster Tools
+# - Use <link rel="canonical"> for preferred URLs
+# - Optimize performance (Core Web Vitals, image sizes, caching)
+# - Ensure your site is fully responsive and mobile-friendly
+# - Add structured data (JSON-LD) for:
+#   • Person
+#   • Portfolio Projects
+#   • Blog posts (if any)
+# - Keep metadata (title, description, OG tags) consistent and meaningful
+
+# ==============================
+# Notes for Developers
+# ==============================
+
+# ✅ Ensure the sitemap is auto-updated during deployments.
+# ✅ Never disallow essential pages like homepage, portfolio, or contact.
+# ❌ Do not allow access to sensitive endpoints or admin areas.
+
+# Example: Structured Data Recommendation
+# {
+#   "@context": "https://schema.org",
+#   "@type": "Person",
+#   "name": "Yash Rana",
+#   "url": "https://yashrana.tech",
+#   "sameAs": [
+#     "https://linkedin.com/in/devop-yash-rana",
+#     "https://github.com/Yashrana1010"
+#   ],
+#   "jobTitle": "Full Stack Blockchain Developer"
+# }
+

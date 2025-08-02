@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-textLight font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+  
+  .neon-border {
+    @apply border border-accent/30 shadow-glow;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-accent to-highlight text-primary font-semibold rounded-lg 
+           transition-all duration-300 hover:shadow-glow hover:scale-105 focus:outline-none focus:ring-2 
+           focus:ring-highlight/50;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border border-accent text-accent font-semibold rounded-lg 
+           transition-all duration-300 hover:bg-accent hover:text-primary hover:shadow-glow 
+           focus:outline-none focus:ring-2 focus:ring-accent/50;
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 lg:px-8;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38BDF8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22D3EE;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+:root{
+  background: #0000;
+}
+
+.slow-spin {
+  animation: spin 20s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* disable drag globally */
+* {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+img, video {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
