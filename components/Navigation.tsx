@@ -1,50 +1,51 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Download } from 'lucide-react'
-import myPhoto from '../app/assets/yashRana.png'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Download } from "lucide-react";
+import myPhoto from "../app/assets/namanKumar.png";
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Certifications', href: '#certifications' },
-    { name: 'Contact', href: '#contact' },
-  ]
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMobileMenuOpen(false)
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false);
     }
-  }
+  };
 
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-2 sm:top-4 inset-x-0 mx-auto z-50 
         w-[98%] xs:w-[96%] sm:w-[94%] md:w-[88%] lg:w-[80%] xl:w-[75%] 2xl:w-[65%] 3xl:w-[55%]
         max-w-7xl
-        ${isScrolled
-          ? 'bg-white/15 backdrop-blur-xl shadow-2xl'
-          : 'bg-white/10 backdrop-blur-md shadow-xl'
+        ${
+          isScrolled
+            ? "bg-white/15 backdrop-blur-xl shadow-2xl"
+            : "bg-white/10 backdrop-blur-md shadow-xl"
         } 
         rounded-xl sm:rounded-2xl border border-white/20 transition-all duration-500 ease-out
         supports-[backdrop-filter]:bg-white/10 supports-[backdrop-filter]:backdrop-blur-md`}
@@ -58,12 +59,12 @@ const Navigation = () => {
           <div className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-accent to-highlight rounded-full flex items-center justify-center ring-1 sm:ring-2 ring-white/20">
             <img
               src={myPhoto.src}
-              alt="Yash Rana"
+              alt="Naman Kumar"
               className="w-full h-full object-cover rounded-full"
             />
           </div>
           <span className="font-heading font-bold text-sm xs:text-base sm:text-lg md:text-xl text-white whitespace-nowrap">
-            Yash Rana
+            Naman Kumar
           </span>
         </motion.div>
 
@@ -79,13 +80,15 @@ const Navigation = () => {
                 hover:bg-white/10 hover:shadow-lg hover:text-white hover:backdrop-blur-sm
                 active:bg-white/15 group whitespace-nowrap"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-lg opacity-0 
-                group-hover:opacity-100 transition-all duration-300 blur-sm"></span>
+              <span
+                className="absolute inset-0 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-lg opacity-0 
+                group-hover:opacity-100 transition-all duration-300 blur-sm"
+              ></span>
               <span className="relative z-10">{item.name}</span>
             </motion.button>
           ))}
           <motion.a
-            href="/Yash_Ran_FullStack.pdf"
+            href="/Naman_Kumar_Resume.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -110,8 +113,10 @@ const Navigation = () => {
                 hover:bg-white/10 hover:shadow-lg hover:text-white hover:backdrop-blur-sm
                 active:bg-white/15 group"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-lg opacity-0 
-                group-hover:opacity-100 transition-all duration-300 blur-sm"></span>
+              <span
+                className="absolute inset-0 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-lg opacity-0 
+                group-hover:opacity-100 transition-all duration-300 blur-sm"
+              ></span>
               <span className="relative z-10">{item.name}</span>
             </motion.button>
           ))}
@@ -132,7 +137,11 @@ const Navigation = () => {
           className="md:hidden p-1.5 sm:p-2 text-white hover:text-accent transition-colors duration-300
             hover:bg-white/10 rounded-lg backdrop-blur-sm"
         >
-          {isMobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
+          {isMobileMenuOpen ? (
+            <X size={20} className="sm:w-6 sm:h-6" />
+          ) : (
+            <Menu size={20} className="sm:w-6 sm:h-6" />
+          )}
         </motion.button>
       </div>
 
@@ -141,31 +150,34 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="lg:hidden overflow-hidden border-t border-white/20"
           >
-            <div className="relative bg-gradient-to-b from-slate-600/5 to-slate-800/10 backdrop-blur-xl rounded-b-xl sm:rounded-b-2xl
-              supports-[backdrop-filter]:bg-white/10 supports-[backdrop-filter]:backdrop-blur-xl">
+            <div
+              className="relative bg-gradient-to-b from-slate-600/5 to-slate-800/10 backdrop-blur-xl rounded-b-xl sm:rounded-b-2xl
+              supports-[backdrop-filter]:bg-white/10 supports-[backdrop-filter]:backdrop-blur-xl"
+            >
               <div className="px-3 xs:px-4 sm:px-6 py-4 sm:py-6 space-y-2 sm:space-y-3">
-
                 {/* Show all items on mobile, remaining items on tablet */}
-                {(window.innerWidth < 768 ? navItems : navItems.slice(4)).map((item, index) => (
-                  <motion.button
-                    key={item.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                    onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left py-2.5 sm:py-3 px-3 sm:px-4 text-primary hover:text-accent 
+                {(window.innerWidth < 768 ? navItems : navItems.slice(4)).map(
+                  (item, index) => (
+                    <motion.button
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                      onClick={() => scrollToSection(item.href)}
+                      className="block w-full text-left py-2.5 sm:py-3 px-3 sm:px-4 text-primary hover:text-accent 
                       transition-all duration-300 font-medium rounded-lg text-sm sm:text-base
                       hover:bg-white/10 hover:backdrop-blur-sm hover:shadow-lg
                       active:bg-white/15 active:scale-95"
-                  >
-                    {item.name}
-                  </motion.button>
-                ))}
+                    >
+                      {item.name}
+                    </motion.button>
+                  )
+                )}
 
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -174,7 +186,7 @@ const Navigation = () => {
                   className="pt-3 sm:pt-4 border-t border-white/20"
                 >
                   <motion.a
-                    href="/Yash_Ran_FullStack.pdf"
+                    href="/Naman_Kumar_Resume.pdf"
                     download
                     whileTap={{ scale: 0.95 }}
                     className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-accent to-highlight text-black font-semibold text-sm sm:text-base
@@ -192,7 +204,7 @@ const Navigation = () => {
         )}
       </AnimatePresence>
     </motion.nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

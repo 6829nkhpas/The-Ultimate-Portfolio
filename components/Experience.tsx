@@ -1,62 +1,57 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      company: 'QuadB Technologies',
-      position: 'Blockchain Developer',
-      duration: 'June 2024 - Present',
-      location: 'Remote',
-      type: 'Full-time',
-      description: 'Developing decentralized applications on Internet Computer Protocol using Rust and Motoko. Building scalable blockchain solutions and smart contracts.',
-      technologies: ['Rust', 'ICP', 'Motoko', 'DeFi', 'Smart Contracts'],
-      achievements: [
-        'Built and deployed 3+ production-ready dApps on ICP',
-        'Optimized smart contract gas efficiency by 25%',
-        'Implemented secure authentication systems using Internet Identity',
-        'Collaborated with cross-functional teams on blockchain architecture'
+      company: "Chainshift",
+      position: "Blockchain & Backend Developer Intern",
+      duration: "Oct 2023 - 2024",
+      location: "Greater Noida (Remote)",
+      type: "Internship",
+      description:
+        "Developed, tested, and deployed smart contracts and blockchain solutions. Integrated blockchain technology into existing systems.",
+      technologies: [
+        "Solidity",
+        "Smart Contracts",
+        "Blockchain",
+        "Backend Development",
+        "Security",
       ],
-      companyUrl: 'https://quadbtech.com',
-      color: 'from-purple-500 to-indigo-600'
+      achievements: [
+        "Developed, tested, and deployed over 20 smart contracts, achieving a 99% success rate with zero security incidents",
+        "Successfully integrated blockchain solutions into existing systems, reducing processing time by 30% and increasing transparency in transactional records",
+        "Conducted in-depth blockchain research, implementing optimizations that improved performance by 25% and enhanced security measures, reducing vulnerability risks by 40%",
+      ],
+      companyUrl: "https://chainshift.in",
+      color: "from-blue-500 to-cyan-600",
     },
     {
-      company: 'ChainShift',
-      position: 'Full Stack Developer Intern',
-      duration: 'March 2024 - May 2024',
-      location: 'Remote',
-      type: 'Internship',
-      description: 'Contributed to the development of ChainShift dApp, a comprehensive blockchain platform. Worked on both frontend and backend components.',
-      technologies: ['React.js', 'Node.js', 'Express.js', 'Web3.js', 'Ethereum'],
-      achievements: [
-        'Developed responsive UI components for the ChainShift platform',
-        'Integrated Web3 wallet connections and transaction handling',
-        'Built RESTful APIs for blockchain data aggregation',
-        'Improved application performance by implementing code splitting'
+      company: "Thecyberhost",
+      position: "Application Pentester",
+      duration: "Aug 2023 - Oct 2023",
+      location: "New Delhi (Remote)",
+      type: "Internship",
+      description:
+        "Executed penetration tests on blockchain networks and applications. Introduced advanced security protocols and streamlined deployment processes.",
+      technologies: [
+        "Penetration Testing",
+        "Security",
+        "Blockchain Security",
+        "DevOps",
+        "Deployment",
       ],
-      companyUrl: 'https://chainshift.in',
-      color: 'from-blue-500 to-cyan-600'
+      achievements: [
+        "Executed penetration tests on blockchain networks, identifying and resolving 15+ vulnerabilities, enhancing application security and stability",
+        "Introduced advanced security protocols, reducing system breaches by 35% and establishing continuous monitoring for enhanced security",
+        "Streamlined deployment processes, reducing deployment time by 50% and improving team productivity",
+      ],
+      companyUrl: "https://thecyberhost.com",
+      color: "from-red-500 to-pink-600",
     },
-    {
-      company: 'Celebal Technologies',
-      position: 'SQL Developer Intern',
-      duration: 'January 2024 - February 2024',
-      location: 'Remote',
-      type: 'Internship',
-      description: 'Focused on data analysis and database optimization. Worked with large datasets and created efficient SQL queries for business intelligence.',
-      technologies: ['SQL', 'PostgreSQL', 'MySQL', 'Data Analysis', 'Database Design'],
-      achievements: [
-        'Optimized complex SQL queries reducing execution time by 40%',
-        'Created comprehensive data models for business analytics',
-        'Developed automated reporting systems using stored procedures',
-        'Mentored junior interns on SQL best practices'
-      ],
-      companyUrl: 'https://celebaltech.com',
-      color: 'from-green-500 to-emerald-600'
-    }
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,7 +61,7 @@ const Experience = () => {
         staggerChildren: 0.3,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -78,10 +73,13 @@ const Experience = () => {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   return (
-    <section id="experience" className="relative section-padding bg-gradient-to-br from-primary via-primary/98 to-primary/95 overflow-hidden min-h-screen">
+    <section
+      id="experience"
+      className="relative section-padding bg-gradient-to-br from-primary via-primary/98 to-primary/95 overflow-hidden min-h-screen"
+    >
       <div className="container-width relative z-20 px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -96,8 +94,9 @@ const Experience = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-accent to-highlight mx-auto mb-8"></div>
             <p className="text-lg text-textMuted max-w-3xl mx-auto">
-              My journey through various roles has shaped me into a versatile developer
-              with expertise spanning from traditional web development to cutting-edge blockchain technologies.
+              My journey through various roles has shaped me into a versatile
+              developer with expertise spanning from traditional web development
+              to cutting-edge blockchain technologies.
             </p>
           </motion.div>
 
@@ -111,14 +110,19 @@ const Experience = () => {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  className={`relative flex flex-col items-start gap-6 md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
+                  className={`relative flex flex-col items-start gap-6 md:items-center ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 bg-gradient-to-r from-accent to-highlight rounded-full border-4 border-primary z-10"></div>
 
                   {/* Content Card */}
-                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} z-10`}>
+                  <div
+                    className={`w-full md:w-5/12 ${
+                      index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                    } z-10`}
+                  >
                     <motion.div
                       whileHover={{ y: -5, scale: 1.02 }}
                       transition={{ duration: 0.3 }}
@@ -153,7 +157,9 @@ const Experience = () => {
                               <MapPin size={14} />
                               <span>{exp.location}</span>
                             </div>
-                            <span className={`px-2 py-1 rounded-full text-xs bg-gradient-to-r ${exp.color} text-white font-medium`}>
+                            <span
+                              className={`px-2 py-1 rounded-full text-xs bg-gradient-to-r ${exp.color} text-white font-medium`}
+                            >
                               {exp.type}
                             </span>
                           </div>
@@ -167,11 +173,18 @@ const Experience = () => {
 
                       {/* Key Achievements */}
                       <div className="mb-4">
-                        <h5 className="text-sm font-semibold text-accent mb-2">Key Achievements:</h5>
+                        <h5 className="text-sm font-semibold text-accent mb-2">
+                          Key Achievements:
+                        </h5>
                         <ul className="space-y-1">
                           {exp.achievements.map((achievement, i) => (
-                            <li key={i} className="text-sm text-textMuted flex items-start">
-                              <span className="text-highlight mr-2 mt-1">•</span>
+                            <li
+                              key={i}
+                              className="text-sm text-textMuted flex items-start"
+                            >
+                              <span className="text-highlight mr-2 mt-1">
+                                •
+                              </span>
                               <span>{achievement}</span>
                             </li>
                           ))}
@@ -201,10 +214,7 @@ const Experience = () => {
           </div>
 
           {/* CTA Section */}
-          <motion.div
-            variants={cardVariants}
-            className="text-center mt-16"
-          >
+          <motion.div variants={cardVariants} className="text-center mt-16">
             <div className="glass-card p-8 max-w-2xl mx-auto">
               <div className="flex items-center justify-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-accent to-highlight rounded-full flex items-center justify-center">
@@ -215,16 +225,16 @@ const Experience = () => {
                 Ready for New Opportunities
               </h3>
               <p className="text-textMuted mb-6">
-                I'm always excited to take on new challenges and work with innovative teams.
-                Let's build something amazing together!
+                I'm always excited to take on new challenges and work with
+                innovative teams. Let's build something amazing together!
               </p>
               <motion.a
                 href="#contact"
                 onClick={(e) => {
-                  e.preventDefault()
-                  const contactSection = document.querySelector('#contact')
+                  e.preventDefault();
+                  const contactSection = document.querySelector("#contact");
                   if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' })
+                    contactSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
                 whileHover={{ scale: 1.05 }}
@@ -238,7 +248,7 @@ const Experience = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

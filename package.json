@@ -1,7 +1,7 @@
 {
-  "name": "yash-rana-portfolio",
+  "name": "naman-kumar-portfolio",
   "version": "1.0.0",
-  "description": "Modern personal portfolio website for Yash Rana - Full Stack & Blockchain Developer",
+  "description": "Modern personal portfolio website for Naman Kumar - Backend & Blockchain Developer",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -34,8 +34,8 @@
     "nextjs",
     "blockchain",
     "fullstack",
-    "yash-rana"
+    "naman-kumar"
   ],
-  "author": "Yash Rana",
+  "author": "Naman Kumar",
   "license": "MIT"
 }

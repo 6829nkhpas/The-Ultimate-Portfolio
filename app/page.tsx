@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { useState, useEffect, ReactNode } from 'react'
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
-import Navigation from '@/components/Navigation'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Experience from '@/components/Experience'
-import Projects from '@/components/Projects'
-import Certifications from '@/components/Certifications'
-import Leadership from '@/components/Leadership'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
-import myPhoto from '@/app/assets/yashRana.png'
+import { useState, useEffect, ReactNode } from "react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Certifications from "@/components/Certifications";
+import Leadership from "@/components/Leadership";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import myPhoto from "@/app/assets/namanKumar.png";
 
 // Loading Component
 const LoadingScreen = () => {
@@ -30,14 +30,14 @@ const LoadingScreen = () => {
           transition={{
             duration: 1,
             type: "spring",
-            stiffness: 100
+            stiffness: 100,
           }}
           className="mb-8"
         >
           <div className="w-20 h-20 bg-gradient-to-br from-accent to-highlight rounded-full flex items-center justify-center mx-auto">
             <img
               src={myPhoto.src}
-              alt="Yash Rana"
+              alt="Naman Kumar"
               className="w-full h-full object-cover rounded-full"
             />
           </div>
@@ -70,8 +70,8 @@ const LoadingScreen = () => {
         </motion.div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const PageTransition = ({ children }: { children: ReactNode }) => (
   <motion.div
@@ -81,22 +81,22 @@ const PageTransition = ({ children }: { children: ReactNode }) => (
   >
     {children}
   </motion.div>
-)
+);
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [showContent, setShowContent] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
-      setIsLoading(false)
+      setIsLoading(false);
       // Small delay to ensure smooth transition
-      setTimeout(() => setShowContent(true), 100)
-    }, 2000)
+      setTimeout(() => setShowContent(true), 100);
+    }, 2000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -175,5 +175,5 @@ export default function Home() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

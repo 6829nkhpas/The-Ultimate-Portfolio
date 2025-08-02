@@ -1,11 +1,11 @@
 {
-  "name": "Yash Rana Portfolio",
-  "short_name": "YashRana",
+  "name": "Naman Kumar Portfolio",
+  "short_name": "NamanKumar",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0F172A",
   "theme_color": "#0F172A",
-  "description": "Portfolio of Yash Rana - Full Stack & Blockchain Developer.",
+  "description": "Portfolio of Naman Kumar - Backend & Blockchain Developer.",
   "icons": [
     {
       "src": "/favicon-16x16.png",

@@ -1,6 +1,6 @@
-# Yash Rana - Portfolio Website
+# Naman Kumar - Portfolio Website
 
-A modern, responsive, and dark-themed personal portfolio website showcasing expertise in Full Stack and Blockchain development.
+A modern, responsive, and dark-themed personal portfolio website showcasing expertise in Backend and Blockchain development.
 
 ## World Link
 
@@ -27,12 +27,14 @@ A modern, responsive, and dark-themed personal portfolio website showcasing expe
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: #0F172A (dark slate)
 - **Accent**: #38BDF8 (sky blue)
 - **Text**: #F8FAFC (light white), #94A3B8 (muted grey)
 - **Highlight**: #22D3EE (cyan)
 
 ### Typography
+
 - **Headings**: Poppins/Outfit
 - **Body**: Inter
 - **Weights**: 400, 600, 700
@@ -50,23 +52,27 @@ A modern, responsive, and dark-themed personal portfolio website showcasing expe
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/yash-rana0101/portfolio.git
+git clone https://github.com/nkhpas/portfolio.git
 cd portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -107,22 +113,26 @@ npm start
 ## 🌟 Key Features
 
 ### Responsive Design
+
 - Mobile-first approach
 - Adaptive layouts for all screen sizes
 - Touch-friendly interactions
 
 ### Performance Optimizations
+
 - Image optimization with Next.js
 - Code splitting and lazy loading
 - Efficient re-rendering with React optimizations
 
 ### Accessibility
+
 - Semantic HTML structure
 - Keyboard navigation support
 - Screen reader friendly
 - WCAG 2.1 compliant
 
 ### SEO
+
 - Dynamic meta tags
 - Open Graph tags
 - Twitter Card tags
@@ -131,10 +141,10 @@ npm start
 
 ## 🎯 Contact Information
 
-- **Email**: ranayash812@gmail.com
-- **LinkedIn**: [linkedin.com/in/yashrana](https://www.linkedin.com/in/devop-yash-rana)
-- **GitHub**: [github.com/yashrana](https://github.com/yash-rana0101)
-- **Website**: [cyberhunter.club](https://cyberhunter.club)
+- **Email**: onkhpas091@gmail.com
+- **LinkedIn**: [linkedin.com/in/nkhpas](https://www.linkedin.com/in/nkhpas)
+- **GitHub**: [github.com/nkhpas](https://github.com/nkhpas)
+- **Website**: [namankumar.live](https://namankumar.live)
 
 ## 📄 License
 
@@ -149,4 +159,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with 💙 using Next.js by Yash Rana**
+**Made with 💙 using Next.js by Naman Kumar**

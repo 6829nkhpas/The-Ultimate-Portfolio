@@ -1,81 +1,97 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Users, Award, Calendar, ExternalLink, Shield, Target, BookOpen, Zap } from 'lucide-react'
+import { motion } from "framer-motion";
+import {
+  Users,
+  Award,
+  Calendar,
+  ExternalLink,
+  Shield,
+  Target,
+  BookOpen,
+  Zap,
+} from "lucide-react";
 
 const Leadership = () => {
   const achievements = [
     {
-      title: 'Vice-President',
-      organization: 'Cyber-Security Club, Quantum University',
-      period: '2023 - Present',
-      description: 'Leading a team of 50+ cybersecurity enthusiasts, organizing workshops, hackathons, and mentoring sessions.',
+      title: "President",
+      organization: "Cyber-Security Technical Club",
+      period: "2023 - Present",
+      description:
+        "Led a team in hosting hackathons and managing live projects for 300+ members, increasing engagement by 50% and providing hands-on cybersecurity experience through workshops and collaborative projects.",
       icon: <Shield className="w-8 h-8" />,
-      color: 'from-purple-500 to-indigo-600',
+      color: "from-purple-500 to-indigo-600",
       stats: [
-        { label: 'Team Members', value: '50+' },
-        { label: 'Events Organized', value: '15+' },
-        { label: 'Students Mentored', value: '100+' }
-      ]
+        { label: "Team Members", value: "300+" },
+        { label: "Events Organized", value: "20+" },
+        { label: "Students Mentored", value: "150+" },
+      ],
     },
     {
-      title: 'Hackathon Organizer',
-      organization: 'Multiple Tech Events',
-      period: '2023 - 2024',
-      description: 'Organized and coordinated several hackathons, focusing on blockchain and cybersecurity challenges.',
+      title: "Hackathon Organizer",
+      organization: "Multiple Tech Events",
+      period: "2023 - 2024",
+      description:
+        "Organized and coordinated several hackathons, focusing on blockchain and cybersecurity challenges.",
       icon: <Zap className="w-8 h-8" />,
-      color: 'from-yellow-500 to-orange-600',
+      color: "from-yellow-500 to-orange-600",
       stats: [
-        { label: 'Hackathons', value: '8' },
-        { label: 'Participants', value: '500+' },
-        { label: 'Prize Pool', value: '$10K+' }
-      ]
+        { label: "Hackathons", value: "8" },
+        { label: "Participants", value: "500+" },
+        { label: "Prize Pool", value: "$10K+" },
+      ],
     },
     {
-      title: 'Workshop Facilitator',
-      organization: 'Tech Community',
-      period: '2022 - Present',
-      description: 'Conducted workshops on blockchain development, cybersecurity, and modern web technologies.',
+      title: "Workshop Facilitator",
+      organization: "Tech Community",
+      period: "2022 - Present",
+      description:
+        "Conducted workshops on blockchain development, cybersecurity, and modern web technologies.",
       icon: <BookOpen className="w-8 h-8" />,
-      color: 'from-green-500 to-emerald-600',
+      color: "from-green-500 to-emerald-600",
       stats: [
-        { label: 'Workshops', value: '20+' },
-        { label: 'Attendees', value: '300+' },
-        { label: 'Topics Covered', value: '12' }
-      ]
-    }
-  ]
+        { label: "Workshops", value: "20+" },
+        { label: "Attendees", value: "300+" },
+        { label: "Topics Covered", value: "12" },
+      ],
+    },
+  ];
 
   const initiatives = [
     {
-      title: 'Cyberhunter.club Website',
-      description: 'Designed and developed the official website for our cybersecurity club, featuring member portal, event management, and learning resources.',
-      link: 'https://cyberhunter.club',
-      tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
-      impact: 'Increased club engagement by 150%'
+      title: "Cyberhunter.club Website",
+      description:
+        "Designed and developed the official website for our cybersecurity club, featuring member portal, event management, and learning resources.",
+      link: "https://cyberhunter.club",
+      tech: ["React.js", "Node.js", "MongoDB", "Express.js"],
+      impact: "Increased club engagement by 150%",
     },
     {
-      title: 'Blockchain Workshop Series',
-      description: 'Created a comprehensive 6-week workshop series introducing students to blockchain technology and Web3 development.',
+      title: "Blockchain Workshop Series",
+      description:
+        "Created a comprehensive 6-week workshop series introducing students to blockchain technology and Web3 development.",
       link: null,
-      tech: ['Solidity', 'Web3.js', 'MetaMask', 'Remix IDE'],
-      impact: '80+ students completed the program'
+      tech: ["Solidity", "Web3.js", "MetaMask", "Remix IDE"],
+      impact: "80+ students completed the program",
     },
     {
-      title: 'Cybersecurity Bootcamp',
-      description: 'Organized intensive bootcamps covering ethical hacking, penetration testing, and secure coding practices.',
+      title: "Cybersecurity Bootcamp",
+      description:
+        "Organized intensive bootcamps covering ethical hacking, penetration testing, and secure coding practices.",
       link: null,
-      tech: ['Kali Linux', 'Burp Suite', 'OWASP', 'Security Tools'],
-      impact: '90% job placement rate for participants'
+      tech: ["Kali Linux", "Burp Suite", "OWASP", "Security Tools"],
+      impact: "90% job placement rate for participants",
     },
     {
-      title: 'Mentorship Program',
-      description: 'Established a peer mentorship program connecting experienced members with newcomers for guidance and support.',
+      title: "Mentorship Program",
+      description:
+        "Established a peer mentorship program connecting experienced members with newcomers for guidance and support.",
       link: null,
-      tech: ['Leadership', 'Communication', 'Technical Guidance'],
-      impact: '95% mentee satisfaction rate'
-    }
-  ]
+      tech: ["Leadership", "Communication", "Technical Guidance"],
+      impact: "95% mentee satisfaction rate",
+    },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,7 +101,7 @@ const Leadership = () => {
         staggerChildren: 0.5,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -97,10 +113,13 @@ const Leadership = () => {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   return (
-    <section id="leadership" className="section-padding bg-gradient-to-b from-primary to-primary/95 min-h-screen">
+    <section
+      id="leadership"
+      className="section-padding bg-gradient-to-b from-primary to-primary/95 min-h-screen"
+    >
       <div className="container-width">
         <motion.div
           initial="hidden"
@@ -115,8 +134,9 @@ const Leadership = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-accent to-highlight mx-auto mb-8"></div>
             <p className="text-lg text-textMuted max-w-3xl mx-auto">
-              Passionate about building communities, mentoring fellow developers, and organizing 
-              events that bring together technology enthusiasts to learn and grow together.
+              Passionate about building communities, mentoring fellow
+              developers, and organizing events that bring together technology
+              enthusiasts to learn and grow together.
             </p>
           </motion.div>
 
@@ -132,23 +152,25 @@ const Leadership = () => {
                   whileHover={{ y: -5, scale: 1.02 }}
                   className="glass-card p-6 text-center hover:shadow-card-hover transition-all duration-300"
                 >
-                  <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br ${achievement.color} flex items-center justify-center text-white`}>
+                  <div
+                    className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br ${achievement.color} flex items-center justify-center text-white`}
+                  >
                     {achievement.icon}
                   </div>
-                  
+
                   <h4 className="text-xl font-heading font-bold text-textLight mb-2">
                     {achievement.title}
                   </h4>
-                  
+
                   <p className="text-accent font-medium mb-2">
                     {achievement.organization}
                   </p>
-                  
+
                   <div className="flex items-center justify-center space-x-2 text-textMuted mb-4">
                     <Calendar size={16} />
                     <span className="text-sm">{achievement.period}</span>
                   </div>
-                  
+
                   <p className="text-textMuted text-sm leading-relaxed mb-6">
                     {achievement.description}
                   </p>
@@ -242,15 +264,18 @@ const Leadership = () => {
             </h3>
 
             <p className="text-textMuted max-w-3xl mx-auto mb-8 leading-relaxed">
-              Through my leadership roles and community initiatives, I've had the privilege 
-              of impacting hundreds of students and professionals in their technology journey. 
-              From organizing hackathons to conducting workshops, every effort has been focused 
-              on creating an inclusive and supportive learning environment.
+              Through my leadership roles and community initiatives, I've had
+              the privilege of impacting hundreds of students and professionals
+              in their technology journey. From organizing hackathons to
+              conducting workshops, every effort has been focused on creating an
+              inclusive and supportive learning environment.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">500+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">
+                  500+
+                </div>
                 <div className="text-textMuted text-sm">Students Reached</div>
               </div>
               <div>
@@ -258,7 +283,9 @@ const Leadership = () => {
                 <div className="text-textMuted text-sm">Events Organized</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">100+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">
+                  100+
+                </div>
                 <div className="text-textMuted text-sm">Hours of Mentoring</div>
               </div>
               <div>
@@ -279,14 +306,14 @@ const Leadership = () => {
                 <ExternalLink size={18} />
                 <span>Visit Cyberhunter Club</span>
               </motion.a>
-              
+
               <motion.a
                 href="#contact"
                 onClick={(e) => {
-                  e.preventDefault()
-                  const contactSection = document.querySelector('#contact')
+                  e.preventDefault();
+                  const contactSection = document.querySelector("#contact");
                   if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' })
+                    contactSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
                 whileHover={{ scale: 1.05 }}
@@ -301,7 +328,7 @@ const Leadership = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Leadership
+export default Leadership;

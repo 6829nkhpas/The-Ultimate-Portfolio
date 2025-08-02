@@ -1,35 +1,46 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Download, MessageCircle, CheckCircle, X } from 'lucide-react'
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Download,
+  MessageCircle,
+  CheckCircle,
+  X,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState('idle')
-  const [showSuccessPopup, setShowSuccessPopup] = useState(false)
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   // EmailJS configuration
-  const serviceId = 'service_x7nwfng'
-  const templateId = 'template_u98mcuj'
-  const userId = 'Iaq7K27hpD8vrd15W'
+  const serviceId = "service_x7nwfng";
+  const templateId = "template_u98mcuj";
+  const userId = "Iaq7K27hpD8vrd15W";
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     // EmailJS configuration
     const emailData = {
@@ -41,102 +52,106 @@ const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_name: 'Yash Rana',
-      }
-    }
+        to_name: "Naman Kumar",
+      },
+    };
 
     try {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailData)
-      })
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(emailData),
+        }
+      );
 
       // Log response for debugging
-      console.log('Response status:', response.status)
-      console.log('Response headers:', response.headers)
+      console.log("Response status:", response.status);
+      console.log("Response headers:", response.headers);
 
       if (response.ok) {
-        const responseText = await response.text()
-        console.log('Success response:', responseText)
-        setSubmitStatus('success')
-        setShowSuccessPopup(true)
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        const responseText = await response.text();
+        console.log("Success response:", responseText);
+        setSubmitStatus("success");
+        setShowSuccessPopup(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
 
         setTimeout(() => {
-          setShowSuccessPopup(false)
-        }, 5000)
+          setShowSuccessPopup(false);
+        }, 5000);
       } else {
-        const errorText = await response.text()
-        console.error('Error response:', errorText)
-        throw new Error(`Failed to send email: ${response.status} - ${errorText}`)
+        const errorText = await response.text();
+        console.error("Error response:", errorText);
+        throw new Error(
+          `Failed to send email: ${response.status} - ${errorText}`
+        );
       }
     } catch (error) {
-      console.error('Error sending email:', error)
-      setSubmitStatus('error')
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
-      setTimeout(() => setSubmitStatus('idle'), 5000)
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus("idle"), 5000);
     }
-  }
-
+  };
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      label: 'Email',
-      value: 'ranayash812@gmail.com',
-      href: 'mailto:ranayash812@gmail.com',
-      color: 'from-blue-500 to-cyan-600'
+      label: "Email",
+      value: "onkhpas091@gmail.com",
+      href: "mailto:onkhpas091@gmail.com",
+      color: "from-blue-500 to-cyan-600",
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      label: 'Phone',
-      value: '+91 81309 23346',
-      href: 'tel:+918130923346',
-      color: 'from-green-500 to-emerald-600'
+      label: "Phone",
+      value: "+91 90651 94550",
+      href: "tel:+919065194550",
+      color: "from-green-500 to-emerald-600",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: 'Location',
-      value: 'Roorkee, Uttarakhand, India',
-      href: 'https://maps.google.com/?q=Roorkee,Uttarakhand,India',
-      color: 'from-red-500 to-pink-600'
-    }
-  ]
+      label: "Location",
+      value: "Uttrakhand Roorkee, India",
+      href: "https://maps.google.com/?q=Roorkee,Uttarakhand,India",
+      color: "from-red-500 to-pink-600",
+    },
+  ];
 
   const socialLinks = [
     {
-      name: 'GitHub',
+      name: "GitHub",
       icon: <Github className="w-6 h-6" />,
-      url: 'https://github.com/yash-rana0101',
-      color: 'hover:text-gray-400',
-      username: '@yashrana'
+      url: "https://github.com/nkhpas",
+      color: "hover:text-gray-400",
+      username: "@nkhpas",
     },
     {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       icon: <Linkedin className="w-6 h-6" />,
-      url: 'https://www.linkedin.com/in/devop-yash-rana',
-      color: 'hover:text-blue-400',
-      username: '/in/yashrana'
+      url: "https://www.linkedin.com/in/nkhpas",
+      color: "hover:text-blue-400",
+      username: "/in/nkhpas",
     },
     {
-      name: 'Email',
+      name: "Email",
       icon: <Mail className="w-6 h-6" />,
-      url: 'mailto:ranayash812@gmail.com',
-      color: 'hover:text-accent',
-      username: 'ranayash812@gmail.com'
+      url: "mailto:onkhpas091@gmail.com",
+      color: "hover:text-accent",
+      username: "onkhpas091@gmail.com",
     },
     {
-      name: 'Discord',
+      name: "Website",
       icon: <MessageCircle className="w-6 h-6" />,
-      url: '#',
-      color: 'hover:text-purple-400',
-      username: 'yashrana#1234'
-    }
-  ]
+      url: "https://www.namankumar.live",
+      color: "hover:text-purple-400",
+      username: "namankumar.live",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br relative overflow-hidden">
@@ -171,17 +186,22 @@ const Contact = () => {
                 </h3>
 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Thank you for reaching out! I've received your message and will get back to you within 24 hours.
+                  Thank you for reaching out! I've received your message and
+                  will get back to you within 24 hours.
                 </p>
 
                 <div className="flex flex-col space-y-3">
                   <div className="flex items-center justify-center space-x-2 text-green-400">
                     <CheckCircle size={16} />
-                    <span className="text-sm">Email delivered successfully</span>
+                    <span className="text-sm">
+                      Email delivered successfully
+                    </span>
                   </div>
                   <div className="flex items-center justify-center space-x-2 text-blue-400">
                     <Mail size={16} />
-                    <span className="text-sm">Response time: Within 24 hours</span>
+                    <span className="text-sm">
+                      Response time: Within 24 hours
+                    </span>
                   </div>
                 </div>
 
@@ -213,8 +233,9 @@ const Contact = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-accent mx-auto mb-8 rounded-full"></div>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Ready to bring your ideas to life? Let's discuss how we can work together
-              to create something amazing. I'm always excited to take on new challenges!
+              Ready to bring your ideas to life? Let's discuss how we can work
+              together to create something amazing. I'm always excited to take
+              on new challenges!
             </p>
           </div>
 
@@ -239,7 +260,10 @@ const Contact = () => {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-white font-medium mb-2">
+                        <label
+                          htmlFor="name"
+                          className="block text-white font-medium mb-2"
+                        >
                           Name *
                         </label>
                         <div className="relative">
@@ -253,13 +277,17 @@ const Contact = () => {
                             className="w-full px-4 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 shadow-inner hover:bg-white/8"
                             placeholder="Your name"
                             style={{
-                              boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)'
+                              boxShadow:
+                                "inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)",
                             }}
                           />
                         </div>
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-white font-medium mb-2">
+                        <label
+                          htmlFor="email"
+                          className="block text-white font-medium mb-2"
+                        >
                           Email *
                         </label>
                         <input
@@ -272,14 +300,18 @@ const Contact = () => {
                           className="w-full px-4 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 shadow-inner hover:bg-white/8"
                           placeholder="your.email@example.com"
                           style={{
-                            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)'
+                            boxShadow:
+                              "inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)",
                           }}
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-white font-medium mb-2">
+                      <label
+                        htmlFor="subject"
+                        className="block text-white font-medium mb-2"
+                      >
                         Subject *
                       </label>
                       <input
@@ -292,13 +324,17 @@ const Contact = () => {
                         className="w-full px-4 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 shadow-inner hover:bg-white/8"
                         placeholder="What's this about?"
                         style={{
-                          boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)'
+                          boxShadow:
+                            "inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)",
                         }}
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-white font-medium mb-2">
+                      <label
+                        htmlFor="message"
+                        className="block text-white font-medium mb-2"
+                      >
                         Message *
                       </label>
                       <textarea
@@ -311,7 +347,8 @@ const Contact = () => {
                         className="w-full px-4 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 resize-none shadow-inner hover:bg-white/8"
                         placeholder="Tell me about your project or idea..."
                         style={{
-                          boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)'
+                          boxShadow:
+                            "inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.1)",
                         }}
                       />
                     </div>
@@ -321,7 +358,8 @@ const Contact = () => {
                       disabled={isSubmitting}
                       className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-blue-500 to-accent text-white font-semibold flex items-center justify-center space-x-2 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{
-                        boxShadow: '0 8px 32px rgba(59, 130, 246, 0.25), inset 0 1px 2px rgba(255,255,255,0.1)'
+                        boxShadow:
+                          "0 8px 32px rgba(59, 130, 246, 0.25), inset 0 1px 2px rgba(255,255,255,0.1)",
                       }}
                     >
                       {isSubmitting ? (
@@ -338,10 +376,13 @@ const Contact = () => {
                     </button>
 
                     {/* Status Messages */}
-                    {submitStatus === 'error' && (
+                    {submitStatus === "error" && (
                       <div className="flex items-center space-x-2 text-red-400 bg-red-400/10 backdrop-blur-xl border border-red-400/20 p-4 rounded-2xl">
                         <X size={18} />
-                        <span>Failed to send message. Please try again or email me directly.</span>
+                        <span>
+                          Failed to send message. Please try again or email me
+                          directly.
+                        </span>
                       </div>
                     )}
                   </form>
@@ -365,18 +406,29 @@ const Contact = () => {
                       <a
                         key={index}
                         href={info.href}
-                        target={info.href.startsWith('http') ? '_blank' : undefined}
-                        rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        target={
+                          info.href.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          info.href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
                         className="flex items-center space-x-4 p-4 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item hover:shadow-lg hover:shadow-white/5 hover:scale-[1.02]"
                         style={{
-                          boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.1)'
+                          boxShadow:
+                            "inset 0 1px 2px rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.1)",
                         }}
                       >
-                        <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${info.color} flex items-center justify-center text-white shadow-lg`}>
+                        <div
+                          className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${info.color} flex items-center justify-center text-white shadow-lg`}
+                        >
                           {info.icon}
                         </div>
                         <div>
-                          <div className="text-gray-400 text-sm">{info.label}</div>
+                          <div className="text-gray-400 text-sm">
+                            {info.label}
+                          </div>
                           <div className="text-white font-medium group-hover/item:text-blue-400 transition-colors">
                             {info.value}
                           </div>
@@ -404,15 +456,22 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="flex items-center space-x-3 p-4 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/social hover:shadow-lg hover:shadow-white/5 hover:scale-[1.02] hover:-translate-y-1"
                         style={{
-                          boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.1)'
+                          boxShadow:
+                            "inset 0 1px 2px rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.1)",
                         }}
                       >
-                        <div className={`text-gray-400 group-hover/social:text-blue-400 transition-colors ${social.color}`}>
+                        <div
+                          className={`text-gray-400 group-hover/social:text-blue-400 transition-colors ${social.color}`}
+                        >
                           {social.icon}
                         </div>
                         <div>
-                          <div className="text-white font-medium text-sm">{social.name}</div>
-                          <div className="text-gray-400 text-xs">{social.username}</div>
+                          <div className="text-white font-medium text-sm">
+                            {social.name}
+                          </div>
+                          <div className="text-gray-400 text-xs">
+                            {social.username}
+                          </div>
                         </div>
                       </a>
                     ))}
@@ -434,27 +493,30 @@ const Contact = () => {
                   Let's Build Something Amazing Together
                 </h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Whether you have a project in mind, need consultation on blockchain technology,
-                  or want to discuss collaboration opportunities, I'm here to help turn your ideas into reality.
+                  Whether you have a project in mind, need consultation on
+                  blockchain technology, or want to discuss collaboration
+                  opportunities, I'm here to help turn your ideas into reality.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="mailto:ranayash812@gmail.com"
+                    href="mailto:onkhpas091@gmail.com"
                     className="py-3 px-6 rounded-2xl bg-gradient-to-r from-blue-500 to-accent text-white font-semibold flex items-center justify-center space-x-2 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]"
                     style={{
-                      boxShadow: '0 8px 32px rgba(59, 130, 246, 0.25), inset 0 1px 2px rgba(255,255,255,0.1)'
+                      boxShadow:
+                        "0 8px 32px rgba(59, 130, 246, 0.25), inset 0 1px 2px rgba(255,255,255,0.1)",
                     }}
                   >
                     <Mail size={18} />
                     <span>Email Me Directly</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/devop-yash-rana"
+                    href="https://www.linkedin.com/in/nkhpas"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-3 px-6 rounded-2xl backdrop-blur-xl bg-white/10 border border-white/20 text-white font-semibold flex items-center justify-center space-x-2 transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] active:scale-[0.98]"
                     style={{
-                      boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.2), 0 4px 16px rgba(0,0,0,0.1)'
+                      boxShadow:
+                        "inset 0 1px 2px rgba(255,255,255,0.2), 0 4px 16px rgba(0,0,0,0.1)",
                     }}
                   >
                     <Linkedin size={18} />
@@ -467,7 +529,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default Contact;

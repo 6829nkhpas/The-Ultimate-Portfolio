@@ -1,4 +1,4 @@
-# robots.txt for yashrana.tech
+# robots.txt for namankumar.live
 # Last updated: 2025-07-22
 # This file tells search engine crawlers how to interact with your site.
 
@@ -13,7 +13,7 @@ Allow: /
 # Sitemap Declaration
 # ==============================
 
-Sitemap: https://yashrana.tech/sitemap.xml
+Sitemap: https://namankumar.live/sitemap.xml
 
 # ==============================
 # Disallowed Paths (For Privacy & Security)
@@ -65,12 +65,12 @@ Disallow: /dev/
 # {
 #   "@context": "https://schema.org",
 #   "@type": "Person",
-#   "name": "Yash Rana",
-#   "url": "https://yashrana.tech",
+#   "name": "Naman Kumar",
+#   "url": "https://namankumar.live",
 #   "sameAs": [
-#     "https://linkedin.com/in/devop-yash-rana",
-#     "https://github.com/Yashrana1010"
+#     "https://linkedin.com/in/nkhpas",
+#     "https://github.com/nkhpas"
 #   ],
-#   "jobTitle": "Full Stack Blockchain Developer"
+#   "jobTitle": "Backend Blockchain Developer"
 # }
 

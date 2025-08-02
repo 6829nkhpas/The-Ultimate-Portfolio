@@ -1,221 +1,137 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, X, Play, Code, Database, Globe, ArrowRight, Zap, Star } from 'lucide-react'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink,
+  Github,
+  X,
+  Play,
+  Code,
+  Database,
+  Globe,
+  ArrowRight,
+  Zap,
+  Star,
+} from "lucide-react";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects = [
     {
       id: 1,
-      title: 'ChainShift dApp',
-      category: 'Blockchain',
-      description: 'Comprehensive blockchain platform for decentralized finance',
-      longDescription: 'ChainShift is a next-generation decentralized application that provides users with seamless access to DeFi protocols. Built with React and Web3 integration, it features real-time portfolio tracking, yield farming opportunities, and cross-chain asset management.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753882750/pzhmybreqkshqw9phxkz.png',
-      technologies: ['React.js', 'Web3.js', 'Solidity', 'Node.js', 'Ethereum'],
+      title: "Blockchain Based Voting System",
+      category: "Governance",
+      description: "Transparent, decentralized voting application on Ethereum",
+      longDescription:
+        "Developed a transparent, decentralized voting application on Ethereum, achieving a 100% tamper-proof record. Integrated MetaMask for secure user authentication, with the system handling up to 500 votes per minute without latency.",
+      image:
+        "https://res.cloudinary.com/dtgiujxll/image/upload/v1753882749/vstffhh3fw7em4an4j5l.png",
+      technologies: ["Solidity", "React.js", "Truffle", "Web3.js", "MetaMask"],
       features: [
-        'Multi-wallet integration (MetaMask, WalletConnect)',
-        'Real-time DeFi portfolio tracking',
-        'Cross-chain asset bridging',
-        'Yield farming optimization',
-        'Gas fee estimation and optimization'
+        "100% tamper-proof voting records",
+        "MetaMask integration for secure authentication",
+        "Handles 500 votes per minute without latency",
+        "Real-time vote counting and monitoring",
+        "Immutable election records",
       ],
-      githubUrl: 'https://github.com/chain-shift/chainshift-website',
-      liveUrl: 'https://chainshift.in',
-      status: 'Live',
-      featured: true
+      githubUrl: "https://github.com/nkhpas/blockchain-voting",
+      liveUrl: "Try it Here",
+      status: "Live",
+      featured: true,
     },
     {
       id: 2,
-      title: 'Rust Wallet',
-      category: 'Cryptocurrency',
-      description: 'High-performance cryptocurrency wallet built with Rust',
-      longDescription: 'A secure and lightning-fast cryptocurrency wallet application built entirely in Rust. Features multi-currency support, hardware wallet integration, and advanced security measures including multi-signature transactions.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753882750/afjf3wyfqijpifrv1pcp.png',
-      technologies: ['Rust', 'Tauri', 'Bitcoin', 'Ethereum', 'Cryptography'],
+      title: "Rust Wallet on ICP Blockchain",
+      category: "Cryptocurrency",
+      description:
+        "High-efficiency digital wallet using Rust on Internet Computer Protocol",
+      longDescription:
+        "Built a high-efficiency digital wallet using Rust, deployed on the Internet Computer Protocol (ICP) blockchain, enabling secure and low-cost digital asset transactions. The wallet achieved a 20% reduction in transaction fees and enhanced scalability, capable of handling over 1,000 concurrent users, optimized for DeFi applications.",
+      image:
+        "https://res.cloudinary.com/dtgiujxll/image/upload/v1753882750/afjf3wyfqijpifrv1pcp.png",
+      technologies: ["Rust", "ICP", "Blockchain", "DeFi", "Cryptography"],
       features: [
-        'Multi-cryptocurrency support',
-        'Hardware wallet integration',
-        'Multi-signature transactions',
-        'Hierarchical deterministic wallets',
-        'Advanced encryption and security'
+        "20% reduction in transaction fees",
+        "Handles 1,000+ concurrent users",
+        "Optimized for DeFi applications",
+        "Secure digital asset transactions",
+        "Low-cost transaction processing",
       ],
-      githubUrl: 'https://github.com/yash-rana0101/rustWallet',
+      githubUrl: "https://github.com/nkhpas/rust-wallet-icp",
       liveUrl: null,
-      status: 'Development',
-      featured: false
+      status: "Development",
+      featured: false,
     },
     {
       id: 3,
-      title: 'Stringly - Web3 Dating App',
-      category: 'Social',
-      description: 'Decentralized dating platform with blockchain-verified profiles',
-      longDescription: 'Stringly revolutionizes online dating by leveraging blockchain technology for profile verification and secure messaging. Built with privacy-first principles and decentralized storage for user data protection.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753882751/dpzltqm8rjzfzdhnz2qw.png',
-      technologies: ['Next.js', 'Solidity', 'IPFS', 'ENS', 'MetaMask'],
-      features: [
-        'Blockchain-verified user profiles',
-        'Decentralized messaging system',
-        'Privacy-preserving matching algorithm',
-        'NFT profile badges and achievements',
-        'Token-based premium features'
+      title: "Space-Themed Portfolio",
+      category: "Web",
+      description:
+        "Modern portfolio with interactive animations and responsive design",
+      longDescription:
+        "Created a modern portfolio using HTML, CSS, JavaScript, Next.js, and TypeScript, showcasing projects with interactive animations via Framer Motion, achieving a 40% increase in engagement through responsive design.",
+      image:
+        "https://res.cloudinary.com/dtgiujxll/image/upload/v1753882751/dpzltqm8rjzfzdhnz2qw.png",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Framer Motion",
+        "Tailwind CSS",
+        "React",
       ],
-      githubUrl: 'https://github.com/yash-rana0101/stringly',
-      liveUrl: 'https://stringly.net',
-      status: 'Beta',
-      featured: true
+      features: [
+        "Interactive animations with Framer Motion",
+        "40% increase in user engagement",
+        "Responsive design for all devices",
+        "Modern space-themed UI/UX",
+        "Optimized performance and loading",
+      ],
+      githubUrl: "https://github.com/nkhpas/space-portfolio",
+      liveUrl: "Live Here",
+      status: "Live",
+      featured: true,
     },
     {
       id: 4,
-      title: 'Blockchain Voting System',
-      category: 'Governance',
-      description: 'Transparent and secure voting platform using smart contracts',
-      longDescription: 'A completely transparent and tamper-proof voting system built on Ethereum. Features real-time vote counting, voter anonymity, and immutable election records with comprehensive audit trails.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753882749/vstffhh3fw7em4an4j5l.png',
-      technologies: ['Solidity', 'React.js', 'Truffle', 'Web3.js', 'IPFS'],
-      features: [
-        'Immutable vote recording',
-        'Real-time election monitoring',
-        'Voter anonymity protection',
-        'Multi-candidate support',
-        'Comprehensive audit trails'
+      title: "Cyber Hunter Technical Club Management System",
+      category: "Web",
+      description:
+        "MERN-stack platform for project tracking and team collaboration",
+      longDescription:
+        "Developed a MERN-stack-based platform to streamline project tracking, team collaboration, and technical talent discovery within a college ecosystem. The system enables students to submit and manage projects, earn points based on performance, and rank on a universal leaderboard, while connecting with startups for real-world freelancing opportunities.",
+      image:
+        "https://res.cloudinary.com/dtgiujxll/image/upload/v1753190341/gzmkkhv3c6rma9zzlplz.png",
+      technologies: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "MERN Stack",
       ],
-      githubUrl: 'https://github.com/yash-rana0101/blockchain-voting',
-      liveUrl: null,
-      status: 'Development',
-      featured: false
+      features: [
+        "Project tracking and management",
+        "Team collaboration tools",
+        "Performance-based point system",
+        "Universal leaderboard ranking",
+        "Startup connection for freelancing",
+      ],
+      githubUrl: "https://github.com/nkhpas/cyberhunter-club",
+      liveUrl: "Live Here",
+      status: "Live",
+      featured: false,
     },
-    {
-      id: 5,
-      title: 'Cyberhunter Club Website',
-      category: 'Web',
-      description: 'Official website for university cybersecurity club that provides resources and event management',
-      longDescription: 'Modern and responsive website for the Cyberhunter Club at Quantum University. Features event management, member portal, cybersecurity resources, and interactive learning modules.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753190341/gzmkkhv3c6rma9zzlplz.png',
-      technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io'],
-      features: [
-        'Event management system',
-        'Member authentication portal',
-        'Cybersecurity learning resources',
-        'Real-time chat and discussions',
-        'Competition and CTF tracking'
-      ],
-      githubUrl: 'https://github.com/yash-rana0101/Cyber-Hunter-MobileApp',
-      liveUrl: 'https://cyberhunter.club',
-      status: 'Live',
-      featured: true
-    },
-    {
-      id: 6,
-      title: 'Cyberhunter Club Mobile App',
-      category: 'App',
-      description: 'Official mobile app for university cybersecurity club',
-      longDescription: 'A modern mobile application for the Cyberhunter Club at Quantum University, providing members with access to events, resources, and real-time communication. Built with React Native for cross-platform compatibility.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753883426/fs1t4d2rtgrv1a4ni6nv.jpg',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io'],
-      features: [
-        'Event management system',
-        'Member authentication portal',
-        'Cybersecurity learning resources',
-        'Real-time chat and discussions',
-        'Competition and CTF tracking'
-      ],
-      githubUrl: 'https://github.com/yash-rana0101/Cyber-Hunter-MobileApp',
-      liveUrl: 'https://cyberhunter.club',
-      status: 'Live',
-      featured: false
-    },
-    {
-      id: 7,
-      title: 'Event Management System',
-      category: 'Web',
-      description: 'A comprehensive platform for managing events, registrations, and attendee engagement',
-      longDescription: 'An advanced event management system that allows users to create, manage, and promote events. Features include online ticketing, attendee registration, real-time analytics, and integration with social media platforms for enhanced event visibility.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753883057/wihwler8hshu3ujsbpe3.png',
-      technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io'],
-      features: [
-        'Online ticketing and payment processing',
-        'Attendee registration and management',
-        'Real-time event analytics dashboard',
-        'Social media integration for event promotion',
-        'Customizable event pages with themes'
-      ],
-      githubUrl: 'https://github.com/yash-rana0101/Event-Frontend',
-      liveUrl: 'https://events.cyberhunter.club/',
-      status: 'Live',
-      featured: true
-    },
-    {
-      id: 8,
-      title: 'OpenXAi chat Game',
-      category: 'Enterprise',
-      description: 'AI-powered workforce management system with biometric check-ins',
-      longDescription: 'An advanced workforce management system that integrates biometric authentication for secure employee check-ins and check-outs. Features real-time attendance tracking, automated timesheet generation, and GPS-based location tracking for remote teams.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753883594/qjssmsjnmccj6cuo8pin.png',
-      technologies: ['Next.js', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io', 'OpenAI', 'TensorFlow', 'Python'],
-      features: [
-        'Biometric authentication for secure check-ins',
-        'Real-time attendance tracking and reporting',
-        'Automated timesheet generation',
-        'GPS-based location tracking for remote teams',
-        'AI-powered analytics for workforce optimization'
-      ],
-      githubUrl: 'https://github.com/yash-rana0101/chatbot-game',
-      liveUrl: null,
-      status: 'Development',
-      featured: false
-    },
-    {
-      id: 9,
-      title: 'AI Invoice Manager',
-      category: 'Enterprise',
-      description: 'AI-powered invoice management system for businesses',
-      longDescription: 'An intelligent invoice management system that automates invoice processing, categorization, and payment tracking using AI and machine learning algorithms. Features include real-time analytics, fraud detection, and integration with accounting software.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753883254/imjktzjwqwqaffzmfz3n.png',
-      technologies: ['langchain', 'gemini', 'Node.js', 'PostgreSQL', 'Express.js', 'Redis', 'Docker'],
-      features: [
-        'AI-powered invoice processing and categorization',
-        'Real-time payment tracking and analytics',
-        'Fraud detection and prevention mechanisms',
-        'Integration with popular accounting software',
-        'Customizable invoice templates and reporting'
-      ],
-      githubUrl: 'https://github.com/yash-rana0101/ai-Invoice-Manager',
-      liveUrl: 'https://invoicemanager.kaifoundry.com/',
-      status: 'Live',
-      featured: true
-    },{
-      id: 10,
-      title: 'AI Invoice Manager',
-      category: 'Enterprise',
-      description: 'AI-powered invoice management system for businesses',
-      longDescription: 'An intelligent invoice management system that automates invoice processing, categorization, and payment tracking using AI and machine learning algorithms. Features include real-time analytics, fraud detection, and integration with accounting software.',
-      image: 'https://res.cloudinary.com/dtgiujxll/image/upload/v1753883254/imjktzjwqwqaffzmfz3n.png',
-      technologies: ['langchain', 'gemini', 'Node.js', 'PostgreSQL', 'Express.js', 'Redis', 'Docker'],
-      features: [
-        'AI-powered invoice processing and categorization',
-        'Real-time payment tracking and analytics',
-        'Fraud detection and prevention mechanisms',
-        'Integration with popular accounting software',
-        'Customizable invoice templates and reporting'
-      ],
-      githubUrl: 'https://github.com/yash-rana0101/ai-Invoice-Manager',
-      liveUrl: 'https://invoicemanager.kaifoundry.com/',
-      status: 'Live',
-      featured: false
-    },
-  ]
+  ];
 
   // const categories = ['All', 'Blockchain', 'Cryptocurrency', 'Social', 'Governance', 'Web', 'App', 'Enterprise']
-  const [activeCategory, setActiveCategory] = useState('All')
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredProjects = activeCategory === 'All'
-    ? projects
-    : projects.filter(project => project.category === activeCategory)
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -225,7 +141,7 @@ const Projects = () => {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -237,30 +153,43 @@ const Projects = () => {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'Live': return 'text-green-400 bg-green-400/20 border-green-400/30'
-      case 'Beta': return 'text-yellow-400 bg-yellow-400/20 border-yellow-400/30'
-      case 'Development': return 'text-accent bg-accent/20 border-accent/30'
-      default: return 'text-textMuted bg-textMuted/20 border-textMuted/30'
+      case "Live":
+        return "text-green-400 bg-green-400/20 border-green-400/30";
+      case "Beta":
+        return "text-yellow-400 bg-yellow-400/20 border-yellow-400/30";
+      case "Development":
+        return "text-accent bg-accent/20 border-accent/30";
+      default:
+        return "text-textMuted bg-textMuted/20 border-textMuted/30";
     }
-  }
+  };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'Blockchain': return <Code className="w-4 h-4" />
-      case 'Cryptocurrency': return <Zap className="w-4 h-4" />
-      case 'Web': return <Globe className="w-4 h-4" />
-      case 'App': return <Database className="w-4 h-4" />
-      case 'Enterprise': return <Database className="w-4 h-4" />
-      default: return <Code className="w-4 h-4" />
+      case "Blockchain":
+        return <Code className="w-4 h-4" />;
+      case "Cryptocurrency":
+        return <Zap className="w-4 h-4" />;
+      case "Web":
+        return <Globe className="w-4 h-4" />;
+      case "App":
+        return <Database className="w-4 h-4" />;
+      case "Enterprise":
+        return <Database className="w-4 h-4" />;
+      default:
+        return <Code className="w-4 h-4" />;
     }
-  }
+  };
 
   return (
-    <section id="projects" className="relative min-h-screen bg-gradient-to-br from-primary via-primary/95 to-primary/90 py-20 overflow-hidden">
+    <section
+      id="projects"
+      className="relative min-h-screen bg-gradient-to-br from-primary via-primary/95 to-primary/90 py-20 overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -279,7 +208,9 @@ const Projects = () => {
           <motion.div variants={cardVariants} className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-6">
               <Star className="w-4 h-4 text-accent mr-2" />
-              <span className="text-accent font-semibold text-sm">Featured Work</span>
+              <span className="text-accent font-semibold text-sm">
+                Featured Work
+              </span>
             </div>
             <h2 className="flex gap-2 items-center justify-center text-5xl md:text-6xl font-heading font-bold text-textLight mb-6 leading-tight">
               Creative
@@ -288,8 +219,8 @@ const Projects = () => {
               </span>
             </h2>
             <p className="text-xl text-textMuted max-w-3xl mx-auto leading-relaxed">
-              Innovative solutions spanning blockchain development, AI integration,
-              and cutting-edge web applications
+              Innovative solutions spanning blockchain development, AI
+              integration, and cutting-edge web applications
             </p>
           </motion.div>
 
@@ -309,7 +240,9 @@ const Projects = () => {
                   whileHover={{ y: -8 }}
                   onHoverStart={() => setHoveredProject(project.id)}
                   onHoverEnd={() => setHoveredProject(null)}
-                  className={`relative group cursor-pointer ${project.featured ? 'md:col-span-2 lg:col-span-2' : ''}`}
+                  className={`relative group cursor-pointer ${
+                    project.featured ? "md:col-span-2 lg:col-span-2" : ""
+                  }`}
                   onClick={() => setSelectedProject(project.id)}
                 >
                   <div className="relative h-full bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-white/[0.05] hover:border-accent/30 hover:shadow-card-hover">
@@ -318,20 +251,30 @@ const Projects = () => {
                       <div className="absolute top-4 left-4 z-20">
                         <div className="flex items-center px-3 py-1.5 bg-gradient-to-r from-accent to-highlight rounded-full">
                           <Star className="w-3 h-3 text-primary mr-1.5" />
-                          <span className="text-xs font-semibold text-primary">Featured</span>
+                          <span className="text-xs font-semibold text-primary">
+                            Featured
+                          </span>
                         </div>
                       </div>
                     )}
 
                     {/* Status Badge */}
                     <div className="absolute top-4 right-4 z-20">
-                      <div className={`px-3 py-1.5 rounded-full border text-xs font-semibold ${getStatusColor(project.status)}`}>
+                      <div
+                        className={`px-3 py-1.5 rounded-full border text-xs font-semibold ${getStatusColor(
+                          project.status
+                        )}`}
+                      >
                         {project.status}
                       </div>
                     </div>
 
                     {/* Project Image */}
-                    <div className={`relative ${project.featured ? 'h-64' : 'h-48'} overflow-hidden`}>
+                    <div
+                      className={`relative ${
+                        project.featured ? "h-64" : "h-48"
+                      } overflow-hidden`}
+                    >
                       <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent z-10" />
 
                       {project.image ? (
@@ -351,12 +294,16 @@ const Projects = () => {
                       {/* Hover Overlay */}
                       <motion.div
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
+                        animate={{
+                          opacity: hoveredProject === project.id ? 1 : 0,
+                        }}
                         className="absolute inset-0 bg-accent/20 backdrop-blur-sm flex items-center justify-center z-20"
                       >
                         <div className="text-center">
                           <Play className="w-12 h-12 text-textLight mx-auto mb-2" />
-                          <p className="text-textLight font-semibold">View Details</p>
+                          <p className="text-textLight font-semibold">
+                            View Details
+                          </p>
                         </div>
                       </motion.div>
                     </div>
@@ -370,7 +317,9 @@ const Projects = () => {
                           </h3>
                           <div className="flex items-center space-x-2 mb-3">
                             {getCategoryIcon(project.category)}
-                            <span className="text-accent text-sm font-semibold">{project.category}</span>
+                            <span className="text-accent text-sm font-semibold">
+                              {project.category}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -381,17 +330,22 @@ const Projects = () => {
 
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2">
-                        {project.technologies.slice(0, project.featured ? 5 : 3).map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 text-xs bg-white/5 border border-white/10 text-accent rounded-lg font-medium"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > (project.featured ? 5 : 3) && (
+                        {project.technologies
+                          .slice(0, project.featured ? 5 : 3)
+                          .map((tech, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1 text-xs bg-white/5 border border-white/10 text-accent rounded-lg font-medium"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        {project.technologies.length >
+                          (project.featured ? 5 : 3) && (
                           <span className="px-3 py-1 text-xs text-textMuted border border-white/10 rounded-lg">
-                            +{project.technologies.length - (project.featured ? 5 : 3)}
+                            +
+                            {project.technologies.length -
+                              (project.featured ? 5 : 3)}
                           </span>
                         )}
                       </div>
@@ -429,7 +383,9 @@ const Projects = () => {
                           whileHover={{ x: 5 }}
                           className="flex items-center text-accent group-hover:text-highlight transition-colors"
                         >
-                          <span className="text-sm font-semibold mr-2">Learn More</span>
+                          <span className="text-sm font-semibold mr-2">
+                            Learn More
+                          </span>
                           <ArrowRight className="w-4 h-4" />
                         </motion.div>
                       </div>
@@ -460,8 +416,8 @@ const Projects = () => {
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
-                const project = projects.find(p => p.id === selectedProject)
-                if (!project) return null
+                const project = projects.find((p) => p.id === selectedProject);
+                if (!project) return null;
 
                 return (
                   <div className="p-8">
@@ -472,10 +428,16 @@ const Projects = () => {
                           {project.featured && (
                             <div className="flex items-center px-3 py-1.5 bg-gradient-to-r from-accent to-highlight rounded-full">
                               <Star className="w-3 h-3 text-primary mr-1.5" />
-                              <span className="text-xs font-semibold text-primary">Featured</span>
+                              <span className="text-xs font-semibold text-primary">
+                                Featured
+                              </span>
                             </div>
                           )}
-                          <div className={`px-3 py-1.5 rounded-full border text-sm font-semibold ${getStatusColor(project.status)}`}>
+                          <div
+                            className={`px-3 py-1.5 rounded-full border text-sm font-semibold ${getStatusColor(
+                              project.status
+                            )}`}
+                          >
                             {project.status}
                           </div>
                         </div>
@@ -484,7 +446,9 @@ const Projects = () => {
                         </h3>
                         <div className="flex items-center space-x-2">
                           {getCategoryIcon(project.category)}
-                          <span className="text-accent font-semibold">{project.category}</span>
+                          <span className="text-accent font-semibold">
+                            {project.category}
+                          </span>
                         </div>
                       </div>
                       <motion.button
@@ -543,7 +507,9 @@ const Projects = () => {
                               transition={{ delay: index * 0.1 }}
                               className="p-3 bg-white/[0.02] border border-accent/20 rounded-xl text-center"
                             >
-                              <span className="text-accent font-semibold text-sm">{tech}</span>
+                              <span className="text-accent font-semibold text-sm">
+                                {tech}
+                              </span>
                             </motion.div>
                           ))}
                         </div>
@@ -578,14 +544,14 @@ const Projects = () => {
                       </motion.a>
                     </div>
                   </div>
-                )
+                );
               })()}
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
