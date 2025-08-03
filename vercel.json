@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "name": "naman-kumar-portfolio",
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
@@ -51,4 +52,4 @@
       "destination": "/"
     }
   ]
-} 
+}

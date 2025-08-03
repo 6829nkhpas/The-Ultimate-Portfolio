@@ -14,12 +14,14 @@ This guide will help you deploy your portfolio to Vercel quickly and easily.
 ### Option 1: One-Click Deploy (Recommended)
 
 1. **Fork/Clone the Repository**
+
    ```bash
    git clone https://github.com/6829nkhpas/PortFolio-main.git
    cd PortFolio-main
    ```
 
 2. **Push to Your GitHub**
+
    ```bash
    git remote set-url origin https://github.com/YOUR_USERNAME/PortFolio-main.git
    git add .
@@ -37,6 +39,7 @@ This guide will help you deploy your portfolio to Vercel quickly and easily.
 ### Option 2: Automated Script
 
 1. **Run the deployment script**
+
    ```bash
    ./deploy.sh
    ```
@@ -49,11 +52,13 @@ This guide will help you deploy your portfolio to Vercel quickly and easily.
 ### Option 3: Manual Deployment
 
 1. **Install Vercel CLI**
+
    ```bash
    npm install -g vercel
    ```
 
 2. **Login to Vercel**
+
    ```bash
    vercel login
    ```
@@ -94,6 +99,7 @@ NEXT_PUBLIC_RESUME_URL=https://drive.google.com/file/d/1-92hqDWKWzNB6Pg0PcqeIclK
 ### Custom Domain Setup
 
 1. **In Vercel Dashboard**
+
    - Go to Project Settings → Domains
    - Add your custom domain
    - Follow DNS configuration instructions
@@ -207,10 +213,12 @@ vercel --prod --branch=feature-branch
 ## 📞 Support
 
 ### Vercel Support
+
 - [Vercel Documentation](https://vercel.com/docs)
 - [Vercel Community](https://github.com/vercel/vercel/discussions)
 
 ### Project Support
+
 - **Email**: nkhpas091@gmail.com
 - **GitHub Issues**: [Create an issue](https://github.com/6829nkhpas/PortFolio-main/issues)
 
@@ -218,4 +226,4 @@ vercel --prod --branch=feature-branch
 
 **Happy Deploying! 🚀**
 
-Your portfolio will be live at: `https://your-project.vercel.app` 
+Your portfolio will be live at: `https://naman-kumar-portfolio.vercel.app`
