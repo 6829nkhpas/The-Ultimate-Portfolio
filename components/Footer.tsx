@@ -49,14 +49,14 @@ const Footer = () => {
     {
       name: "GitHub",
       icon: <Github size={20} />,
-      url: "https://github.com/nkhpas",
+      url: "https://github.com/6829nkhpas",
       color: "hover:text-gray-300",
       bg: "hover:bg-gray-800/30",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin size={20} />,
-      url: "https://www.linkedin.com/in/nkhpas",
+      url: "https://www.linkedin.com/in/namankh",
       color: "hover:text-blue-400",
       bg: "hover:bg-blue-500/20",
     },
@@ -73,9 +73,9 @@ const Footer = () => {
     {
       name: "Resume",
       icon: <Download size={16} />,
-      href: "/Naman_Kumar_Resume.pdf",
-      download: true,
-      description: "Download my latest CV",
+      href: "https://drive.google.com/file/d/1-92hqDWKWzNB6Pg0PcqeIclKzDsRRMan/view",
+      download: false,
+      description: "View my latest CV",
     },
     {
       name: "Personal Website",
@@ -86,13 +86,13 @@ const Footer = () => {
     {
       name: "GitHub Projects",
       icon: <Code size={16} />,
-      href: "https://github.com/nkhpas",
+      href: "https://github.com/6829nkhpas",
       description: "Open source contributions",
     },
     {
       name: "LinkedIn Profile",
       icon: <ExternalLink size={16} />,
-      href: "https://www.linkedin.com/in/nkhpas",
+      href: "https://www.linkedin.com/in/namankh",
       description: "Professional network",
     },
   ];

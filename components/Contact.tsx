@@ -102,8 +102,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "onkhpas091@gmail.com",
-      href: "mailto:onkhpas091@gmail.com",
+      value: "nkhpas091@gmail.com",
+      href: "mailto:nkhpas091@gmail.com",
       color: "from-blue-500 to-cyan-600",
     },
     {
@@ -126,23 +126,23 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: <Github className="w-6 h-6" />,
-      url: "https://github.com/nkhpas",
+      url: "https://github.com/6829nkhpas",
       color: "hover:text-gray-400",
-      username: "@nkhpas",
+      username: "@6829nkhpas",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-6 h-6" />,
-      url: "https://www.linkedin.com/in/nkhpas",
+      url: "https://www.linkedin.com/in/namankh",
       color: "hover:text-blue-400",
-      username: "/in/nkhpas",
+      username: "/in/namankh",
     },
     {
       name: "Email",
       icon: <Mail className="w-6 h-6" />,
-      url: "mailto:onkhpas091@gmail.com",
+      url: "mailto:nkhpas091@gmail.com",
       color: "hover:text-accent",
-      username: "onkhpas091@gmail.com",
+      username: "nkhpas091@gmail.com",
     },
     {
       name: "Website",
@@ -510,7 +510,7 @@ const Contact = () => {
                     <span>Email Me Directly</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/nkhpas"
+                    href="https://www.linkedin.com/in/namankh"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-3 px-6 rounded-2xl backdrop-blur-xl bg-white/10 border border-white/20 text-white font-semibold flex items-center justify-center space-x-2 transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] active:scale-[0.98]"

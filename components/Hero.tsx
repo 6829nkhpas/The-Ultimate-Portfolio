@@ -223,7 +223,7 @@ const Hero = () => {
                 className="flex flex-col sm:flex-row gap-4 pt-6"
               >
                 <motion.a
-                  href="/Naman_Kumar_Resume.pdf"
+                  href="https://drive.google.com/file/d/1-92hqDWKWzNB6Pg0PcqeIclKzDsRRMan/view"
                   download
                   whileHover={{ scale: 1.05, y: -3 }}
                   // whileTap={{ scale: 0.95 }}
@@ -411,13 +411,13 @@ const Hero = () => {
             {[
               {
                 icon: Github,
-                href: "https://github.com/nkhpas",
+                href: "https://github.com/6829nkhpas",
                 color:
                   "hover:bg-accent/10 hover:border-accent/30 hover:text-accent",
               },
               {
                 icon: Linkedin,
-                href: "https://www.linkedin.com/in/nkhpas",
+                href: "https://www.linkedin.com/in/namankh",
                 color:
                   "hover:bg-highlight/10 hover:border-highlight/30 hover:text-highlight",
               },

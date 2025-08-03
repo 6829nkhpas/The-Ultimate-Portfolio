@@ -248,7 +248,7 @@ const Navigation = () => {
                     className="pt-3 sm:pt-4 border-t border-white/20"
                   >
                     <motion.a
-                      href="/Naman_Kumar_Resume.pdf"
+                      href="https://drive.google.com/file/d/1-92hqDWKWzNB6Pg0PcqeIclKzDsRRMan/view"
                       download
                       whileTap={{ scale: 0.95 }}
                       className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-accent to-highlight text-black font-semibold text-sm sm:text-base
