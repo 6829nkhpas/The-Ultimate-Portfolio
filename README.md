@@ -141,9 +141,9 @@ npm start
 
 ## 🎯 Contact Information
 
-- **Email**: onkhpas091@gmail.com
+- **Email**: nkhpas091@gmail.com
 - **LinkedIn**: [linkedin.com/in/nkhpas](https://www.linkedin.com/in/nkhpas)
-- **GitHub**: [github.com/nkhpas](https://github.com/nkhpas)
+- **GitHub**: [github.com/nkhpas](https://github.com/6829nkhpas)
 - **Website**: [namankumar.live](https://namankumar.live)
 
 ## 📄 License
