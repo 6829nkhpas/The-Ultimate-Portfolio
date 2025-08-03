@@ -1,61 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-  Sitemap for Naman Kumar's Portfolio Website (https://namankumar.live)
-  Generated on: 2025-07-22
-  Guidelines followed:
-    - https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
-    - Only canonical and indexable URLs are listed
-    - Sections with fragment identifiers (#) are not strictly necessary but included for SPA awareness
-
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Home Page -->
+  <!-- Homepage -->
   <url>
     <loc>https://namankumar.live/</loc>
-    <lastmod>2025-07-22</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- About Section (optional in sitemap, better covered via internal linking and JSON-LD) -->
+  
+  <!-- About Section (anchored) -->
   <url>
     <loc>https://namankumar.live/#about</loc>
-    <lastmod>2025-07-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Projects Section -->
-  <url>
-    <loc>https://namankumar.live/#projects</loc>
-    <lastmod>2025-07-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Experience Section -->
-  <url>
-    <loc>https://namankumar.live/#experience</loc>
-    <lastmod>2025-07-22</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Certifications Section -->
+  
+  <!-- Experience Section (anchored) -->
   <url>
-    <loc>https://namankumar.live/#certifications</loc>
-    <lastmod>2025-07-22</lastmod>
+    <loc>https://namankumar.live/#experience</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Contact Section -->
+  
+  <!-- Projects Section (anchored) -->
+  <url>
+    <loc>https://namankumar.live/#projects</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Contact Section (anchored) -->
   <url>
     <loc>https://namankumar.live/#contact</loc>
-    <lastmod>2025-07-22</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
 </urlset>
