@@ -143,7 +143,7 @@ const Hero = () => {
                   className="relative"
                 >
                   <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-textMuted leading-relaxed">
-                    <span className="block">Backend &</span>
+                    <span className="block">Full Stack &</span>
                     <span className="block bg-gradient-to-r from-highlight to-accent bg-clip-text text-transparent">
                       Blockchain Developer
                     </span>
@@ -167,20 +167,20 @@ const Hero = () => {
               >
                 <div className="relative">
                   <p className="text-xl sm:text-2xl text-textLight leading-relaxed font-medium">
-                    Crafting <span className="text-accent">Scalable Web</span> &
+                    Crafting <span className="text-accent">End-to-End Web</span> &
                     <span className="text-highlight">
                       {" "}
-                      Decentralized Solutions
+                      Blockchain Solutions
                     </span>
                   </p>
                 </div>
 
                 <p className="text-base sm:text-lg text-textMuted/90 leading-relaxed max-w-2xl">
-                  Experienced Backend and Blockchain Developer with over 2 years
-                  of expertise in building scalable, secure, and
-                  high-performance solutions. Passionate about leveraging
-                  advanced technology to deliver impactful results in blockchain
-                  and cloud computing.
+                  Experienced Full Stack and Blockchain Developer with over 2 years
+                  of expertise in building complete web applications from frontend
+                  to backend. Specialized in creating scalable, secure, and
+                  high-performance solutions across the entire technology stack,
+                  with deep expertise in blockchain and cloud computing.
                 </p>
               </motion.div>
 
@@ -192,10 +192,10 @@ const Hero = () => {
                 className="flex flex-wrap gap-4"
               >
                 {[
-                  { icon: Code, label: "Backend" },
-                  { icon: Palette, label: "UI/UX" },
+                  { icon: Code, label: "Full Stack" },
+                  { icon: Palette, label: "Frontend" },
+                  { icon: Server, label: "Backend" },
                   { icon: Zap, label: "Blockchain" },
-                  { icon: Server, label: "DevOps" },
                 ].map(({ icon: Icon, label }, index) => (
                   <motion.div
                     key={label}

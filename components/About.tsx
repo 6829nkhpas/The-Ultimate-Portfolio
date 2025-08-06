@@ -196,8 +196,7 @@ const About = () => {
         <div className="container-width relative z-10 px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="visible"
             variants={containerVariants}
             className="space-y-12 sm:space-y-16 lg:space-y-20"
           >
@@ -224,9 +223,9 @@ const About = () => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
               ></motion.div>
               <p className="text-base sm:text-xl text-textMuted max-w-4xl mx-auto leading-relaxed px-4">
-                A passionate developer crafting innovative solutions that bridge
-                traditional web development with the decentralized future of
-                technology.
+                A passionate full stack developer crafting complete web solutions
+                that bridge modern frontend experiences with robust backend systems
+                and the decentralized future of blockchain technology.
               </p>
             </motion.div>
 
@@ -264,7 +263,7 @@ const About = () => {
                       </h3>
                       <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 mb-6">
                         <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-full text-accent font-medium text-xs sm:text-sm border border-accent/30">
-                          Backend Developer
+                          Full Stack Developer
                         </span>
                         <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-highlight/20 to-accent/20 rounded-full text-highlight font-medium text-xs sm:text-sm border border-highlight/30">
                           Blockchain Developer
@@ -277,15 +276,16 @@ const About = () => {
                         🎓 Graduated from Quantum School of Technology with a
                         BTech in Computer Science and Engineering (Hons) Cyber
                         Security with CGPA 8.4, I'm dedicated to creating
-                        innovative solutions that seamlessly blend backend
-                        development with cutting-edge blockchain technologies.
+                        innovative full stack solutions that seamlessly blend
+                        frontend experiences with robust backend systems and
+                        cutting-edge blockchain technologies.
                       </p>
                       <p>
                         🚀 My tech journey is fueled by insatiable curiosity and
-                        a passion for continuous learning. From building
-                        scalable backend systems to developing smart contracts
-                        and dApps, I thrive on transforming complex challenges
-                        into elegant solutions.
+                        a passion for continuous learning. From crafting intuitive
+                        user interfaces to building scalable backend systems and
+                        developing smart contracts, I thrive on transforming
+                        complex challenges into complete end-to-end solutions.
                       </p>
                     </div>
 
