@@ -67,20 +67,20 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Space-Themed Portfolio",
-      category: "Web",
+      title: "Solona Based loan and credit card system",
+      category: "Blockchain",
       description:
-        "Modern portfolio with interactive animations and responsive design",
+        "Modern loan and credit system on Solana blockchain",
       longDescription:
-        "Created a modern portfolio using HTML, CSS, JavaScript, Next.js, and TypeScript, showcasing projects with interactive animations via Framer Motion, achieving a 40% increase in engagement through responsive design.",
+        "Created a modern loan and credit system on Solana blockchain, enabling users to apply for loans and credit to their credit score, and manage their finances.",
       image:
         "https://res.cloudinary.com/dtgiujxll/image/upload/v1753882751/dpzltqm8rjzfzdhnz2qw.png",
       technologies: [
-        "Next.js",
+        "Solana",
         "TypeScript",
-        "Framer Motion",
-        "Tailwind CSS",
-        "React",
+        "Smart Contracts",
+        "Solana Pay",
+        "Solana Pay",
       ],
       features: [
         "Interactive animations with Framer Motion",
