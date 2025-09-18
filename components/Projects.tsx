@@ -67,39 +67,39 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Solona Based loan and credit card system",
+      title: "Solona Based defi lending pool using anchor rust framework",
       category: "Blockchain",
       description:
-        "Modern loan and credit system on Solana blockchain",
+        "Modern defi lending pool on Solana blockchain using anchor rust framework for smart contracts",
       longDescription:
-        "Created a modern loan and credit system on Solana blockchain, enabling users to apply for loans and credit to their credit score, and manage their finances.",
+        "Created a modern defi lending pool on Solana blockchain, enabling users to apply for loans and credit to their credit score, and manage their finances. using anchor rust framework for smart contracts",
       image:
         "https://res.cloudinary.com/dtgiujxll/image/upload/v1753882751/dpzltqm8rjzfzdhnz2qw.png",
       technologies: [
         "Solana",
         "TypeScript",
         "Smart Contracts",
-        "Solana Pay",
-        "Solana Pay",
+        "Solana Pay", "Defi", "Rust", "Anchor",
+        "Solana Pay", "Lending Pool",
       ],
       features: [
-        "Interactive animations with Framer Motion",
-        "40% increase in user engagement",
+        "Interactive animations with Framer Motion", "Rust", "Anchor",
+        "40% increase in user engagement", "Rust", "Anchor",
         "Responsive design for all devices",
-        "Modern space-themed UI/UX",
-        "Optimized performance and loading",
+        "Modern space-themed UI/UX", "Rust", "Anchor",
+        "Optimized performance and loading", "Rust", "Anchor",
       ],
-      githubUrl: "https://github.com/6829nkhpas/space-portfolio",
+      githubUrl: "https://github.com/6829nkhpas/Defi_Leding-Pool",
       liveUrl: "Live Here",
       status: "Live",
       featured: true,
     },
     {
       id: 4,
-      title: "Cyber Hunter Technical Club Management System",
+      title: "Cyber Hunter Technical Club Management System using MERN stack",
       category: "Web",
       description:
-        "MERN-stack platform for project tracking and team collaboration",
+        "MERN-stack platform for project tracking and team collaboration using MERN stack",
       longDescription:
         "Developed a MERN-stack-based platform to streamline project tracking, team collaboration, and technical talent discovery within a college ecosystem. The system enables students to submit and manage projects, earn points based on performance, and rank on a universal leaderboard, while connecting with startups for real-world freelancing opportunities.",
       image:
