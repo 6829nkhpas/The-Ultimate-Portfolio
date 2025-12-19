@@ -25,10 +25,7 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
-  // EmailJS configuration
-  const serviceId = "service_x7nwfng";
-  const templateId = "template_u98mcuj";
-  const userId = "Iaq7K27hpD8vrd15W";
+
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({
@@ -42,39 +39,19 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // EmailJS configuration
-    const emailData = {
-      service_id: serviceId,
-      template_id: templateId,
-      user_id: userId,
-      template_params: {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: "Naman Kumar",
-      },
-    };
-
     try {
-      const response = await fetch(
-        "https://api.emailjs.com/api/v1.0/email/send",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(emailData),
-        }
-      );
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Log response for debugging
-      console.log("Response status:", response.status);
-      console.log("Response headers:", response.headers);
+      const data = await response.json();
 
       if (response.ok) {
-        const responseText = await response.text();
-        console.log("Success response:", responseText);
+        console.log("✅ Success:", data);
         setSubmitStatus("success");
         setShowSuccessPopup(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
@@ -83,14 +60,11 @@ const Contact = () => {
           setShowSuccessPopup(false);
         }, 5000);
       } else {
-        const errorText = await response.text();
-        console.error("Error response:", errorText);
-        throw new Error(
-          `Failed to send email: ${response.status} - ${errorText}`
-        );
+        console.error("❌ Error:", data);
+        throw new Error(data.error || "Failed to send message");
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error sending message:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
