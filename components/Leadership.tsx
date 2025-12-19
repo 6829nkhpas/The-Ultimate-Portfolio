@@ -60,10 +60,10 @@ const Leadership = () => {
 
   const initiatives = [
     {
-      title: "Cyberhunter.club Website",
+      title: "Cyberhunter.space Website",
       description:
         "Designed and developed the official website for our cybersecurity club, featuring member portal, event management, and learning resources.",
-      link: "https://cyberhunter.club",
+      link: "https://cyberhunter.space",
       tech: ["React.js", "Node.js", "MongoDB", "Express.js"],
       impact: "Increased club engagement by 150%",
     },
@@ -296,7 +296,7 @@ const Leadership = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://cyberhunter.club"
+                href="https://cyberhunter.space"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
