@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import OpenSourceContributions from "@/components/OpenSourceContributions";
 import Certifications from "@/components/Certifications";
 import Leadership from "@/components/Leadership";
 import Contact from "@/components/Contact";
@@ -126,6 +127,12 @@ export default function Home() {
 
                 {/* Projects Section */}
                 <Projects />
+
+                {/* Horizontal Rule */}
+                <div className="w-full h-1 bg-gradient-to-r from-accent to-highlight my-4" />
+
+                {/* Open Source Contributions Section */}
+                <OpenSourceContributions />
 
                 {/* Horizontal Rule */}
                 <div className="w-full h-1 bg-gradient-to-r from-accent to-highlight my-4" />
