@@ -80,15 +80,16 @@ const Navigation = () => {
             </span>
           </motion.div>
 
+
           {/* Desktop Navigation - Hidden on tablet and below */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative px-3 xl:px-4 py-2 rounded-lg text-white/80 transition-all duration-300 ease-in-out font-medium text-sm xl:text-base
+                className="relative px-2 xl:px-3 py-2 rounded-lg text-white/80 transition-all duration-300 ease-in-out font-medium text-xs xl:text-sm
                   hover:bg-white/10 hover:shadow-lg hover:text-white hover:backdrop-blur-sm
                   active:bg-white/15 group whitespace-nowrap"
               >
@@ -105,15 +106,15 @@ const Navigation = () => {
               onClick={openLinkedInModal}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-3 xl:px-4 py-2 rounded-lg text-white/80 transition-all duration-300 ease-in-out font-medium text-sm xl:text-base
+              className="relative px-2 xl:px-3 py-2 rounded-lg text-white/80 transition-all duration-300 ease-in-out font-medium text-xs xl:text-sm
                 hover:bg-white/10 hover:shadow-lg hover:text-white hover:backdrop-blur-sm
-                active:bg-white/15 group whitespace-nowrap flex items-center space-x-1.5 xl:space-x-2"
+                active:bg-white/15 group whitespace-nowrap flex items-center space-x-1 xl:space-x-1.5"
             >
               <span
                 className="absolute inset-0 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-lg opacity-0 
                 group-hover:opacity-100 transition-all duration-300 blur-sm"
               ></span>
-              <Github size={16} className="xl:w-5 xl:h-5 relative z-10" />
+              <Github size={14} className="xl:w-4 xl:h-4 relative z-10" />
               <span className="relative z-10">Github</span>
             </motion.button>
           </div>
