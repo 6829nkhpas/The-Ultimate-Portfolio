@@ -24,6 +24,7 @@ const Navigation = () => {
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Open Source", href: "#opensource" },
     { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
   ];
@@ -54,10 +55,9 @@ const Navigation = () => {
         className={`fixed top-2 sm:top-4 inset-x-0 mx-auto z-50 
           w-[98%] xs:w-[96%] sm:w-[94%] md:w-[88%] lg:w-[80%] xl:w-[75%] 2xl:w-[65%] 3xl:w-[55%]
           max-w-7xl
-          ${
-            isScrolled
-              ? "bg-white/15 backdrop-blur-xl shadow-2xl"
-              : "bg-white/10 backdrop-blur-md shadow-xl"
+          ${isScrolled
+            ? "bg-white/15 backdrop-blur-xl shadow-2xl"
+            : "bg-white/10 backdrop-blur-md shadow-xl"
           } 
           rounded-xl sm:rounded-2xl border border-white/20 transition-all duration-500 ease-out
           supports-[backdrop-filter]:bg-white/10 supports-[backdrop-filter]:backdrop-blur-md`}
