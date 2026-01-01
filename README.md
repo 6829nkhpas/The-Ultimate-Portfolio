@@ -225,6 +225,8 @@ This project is open source and available under the [MIT License](LICENSE).
 - **LinkedIn**: [Naman Kumar](https://www.linkedin.com/in/namankh)
 - **GitHub**: [6829nkhpas](https://github.com/6829nkhpas)
 - **Website**: [namankumar.live](https://namankumar.live)
+  
+  Starting with NEW year 2026
 
 ---
 
