@@ -1,14 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Contact from '@/lib/models/contact';
+import nodemailer from 'nodemailer';
 
-// EmailJS configuration from environment or fallback to hardcoded values
-// Note: For server-side requests, use EMAILJS_PRIVATE_KEY instead of the public key
-const EMAILJS_CONFIG = {
-    serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_x7nwfng',
-    templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_u98mcuj',
-    publicKey: process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'Iaq7K27hpD8vrd15W',
-    privateKey: process.env.EMAILJS_PRIVATE_KEY || '', // Server-side private key
+// Email configuration using Nodemailer with Gmail SMTP
+// For Gmail, you need to use an "App Password" instead of your regular password
+// Get it from: Google Account > Security > 2-Step Verification > App Passwords
+const createEmailTransporter = () => {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+        return null;
+    }
+
+    return nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_APP_PASSWORD,
+        },
+    });
 };
 
 export async function POST(request: NextRequest) {
@@ -48,48 +57,84 @@ export async function POST(request: NextRequest) {
 
         console.log('📧 Contact form submission saved:', contact._id);
 
-        // Send email notification via EmailJS
+        // Send email notification via Nodemailer
         try {
-            // Check if private key is configured
-            if (!EMAILJS_CONFIG.privateKey) {
-                console.warn('⚠️ EmailJS private key not configured. Skipping email notification.');
-                console.warn('💡 To enable email notifications, add EMAILJS_PRIVATE_KEY to your .env.local file');
+            const transporter = createEmailTransporter();
+
+            if (!transporter) {
+                console.warn('⚠️ Email credentials not configured. Skipping email notification.');
+                console.warn('💡 To enable email notifications, add EMAIL_USER and EMAIL_APP_PASSWORD to your .env.local file');
             } else {
-                const emailData = {
-                    service_id: EMAILJS_CONFIG.serviceId,
-                    template_id: EMAILJS_CONFIG.templateId,
-                    user_id: EMAILJS_CONFIG.publicKey,
-                    template_params: {
-                        from_name: name,
-                        from_email: email,
-                        subject: subject,
-                        message: message,
-                        to_name: 'Naman Kumar',
-                    },
-                    accessToken: EMAILJS_CONFIG.privateKey, // Required for server-side requests
-                };
+                const emailHtml = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <style>
+                            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px 10px 0 0; }
+                            .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+                            .field { margin-bottom: 20px; }
+                            .label { font-weight: bold; color: #667eea; }
+                            .value { padding: 10px; background: white; border-left: 3px solid #667eea; margin-top: 5px; }
+                            .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <div class="header">
+                                <h1 style="margin: 0;">📧 New Contact Form Submission</h1>
+                                <p style="margin: 10px 0 0 0; opacity: 0.9;">From your portfolio website</p>
+                            </div>
+                            <div class="content">
+                                <div class="field">
+                                    <div class="label">👤 Name:</div>
+                                    <div class="value">${name}</div>
+                                </div>
+                                <div class="field">
+                                    <div class="label">📧 Email:</div>
+                                    <div class="value"><a href="mailto:${email}">${email}</a></div>
+                                </div>
+                                <div class="field">
+                                    <div class="label">📝 Subject:</div>
+                                    <div class="value">${subject}</div>
+                                </div>
+                                <div class="field">
+                                    <div class="label">💬 Message:</div>
+                                    <div class="value">${message.replace(/\n/g, '<br>')}</div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <p>This email was sent from your portfolio contact form</p>
+                            </div>
+                        </div>
+                    </body>
+                    </html>
+                `;
 
-                const emailResponse = await fetch(
-                    'https://api.emailjs.com/api/v1.0/email/send',
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(emailData),
-                    }
-                );
+                await transporter.sendMail({
+                    from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
+                    to: process.env.EMAIL_USER,
+                    replyTo: email,
+                    subject: `Portfolio Contact: ${subject}`,
+                    html: emailHtml,
+                    text: `
+New Contact Form Submission
 
-                if (emailResponse.ok) {
-                    console.log('✅ Email notification sent successfully');
-                } else {
-                    const errorText = await emailResponse.text();
-                    console.warn('⚠️ Email notification failed:', emailResponse.status, errorText);
-                }
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+                    `.trim(),
+                });
+
+                console.log('✅ Email notification sent successfully via Nodemailer');
             }
         } catch (emailError) {
-            console.error('⚠️ EmailJS error:', emailError);
-            // Continue even if email fails - data is already saved
+            console.error('⚠️ Email sending error:', emailError);
+            // Continue even if email fails - data is already saved to MongoDB
         }
 
         return NextResponse.json(
