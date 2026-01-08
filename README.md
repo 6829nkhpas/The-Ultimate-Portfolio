@@ -224,7 +224,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Email**: nkhpas091@gmail.com
 - **LinkedIn**: [Naman Kumar](https://www.linkedin.com/in/namankh)
 - **GitHub**: [6829nkhpas](https://github.com/6829nkhpas)
-- **Website**: [namankumar.live](https://namankumar.live)
+- **Website**: (https://the-ultimate-portfolio-eight.vercel.app/)
   
   Starting with NEW year 2026
 

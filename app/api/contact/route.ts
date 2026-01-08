@@ -3,10 +3,12 @@ import connectDB from '@/lib/mongodb';
 import Contact from '@/lib/models/contact';
 
 // EmailJS configuration from environment or fallback to hardcoded values
+// Note: For server-side requests, use EMAILJS_PRIVATE_KEY instead of the public key
 const EMAILJS_CONFIG = {
     serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_x7nwfng',
     templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_u98mcuj',
-    userId: process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'Iaq7K27hpD8vrd15W',
+    publicKey: process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'Iaq7K27hpD8vrd15W',
+    privateKey: process.env.EMAILJS_PRIVATE_KEY || '', // Server-side private key
 };
 
 export async function POST(request: NextRequest) {
@@ -48,34 +50,42 @@ export async function POST(request: NextRequest) {
 
         // Send email notification via EmailJS
         try {
-            const emailData = {
-                service_id: EMAILJS_CONFIG.serviceId,
-                template_id: EMAILJS_CONFIG.templateId,
-                user_id: EMAILJS_CONFIG.userId,
-                template_params: {
-                    from_name: name,
-                    from_email: email,
-                    subject: subject,
-                    message: message,
-                    to_name: 'Naman Kumar',
-                },
-            };
-
-            const emailResponse = await fetch(
-                'https://api.emailjs.com/api/v1.0/email/send',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(emailData),
-                }
-            );
-
-            if (emailResponse.ok) {
-                console.log('✅ Email notification sent successfully');
+            // Check if private key is configured
+            if (!EMAILJS_CONFIG.privateKey) {
+                console.warn('⚠️ EmailJS private key not configured. Skipping email notification.');
+                console.warn('💡 To enable email notifications, add EMAILJS_PRIVATE_KEY to your .env.local file');
             } else {
-                console.warn('⚠️ Email notification failed, but data saved to database');
+                const emailData = {
+                    service_id: EMAILJS_CONFIG.serviceId,
+                    template_id: EMAILJS_CONFIG.templateId,
+                    user_id: EMAILJS_CONFIG.publicKey,
+                    template_params: {
+                        from_name: name,
+                        from_email: email,
+                        subject: subject,
+                        message: message,
+                        to_name: 'Naman Kumar',
+                    },
+                    accessToken: EMAILJS_CONFIG.privateKey, // Required for server-side requests
+                };
+
+                const emailResponse = await fetch(
+                    'https://api.emailjs.com/api/v1.0/email/send',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(emailData),
+                    }
+                );
+
+                if (emailResponse.ok) {
+                    console.log('✅ Email notification sent successfully');
+                } else {
+                    const errorText = await emailResponse.text();
+                    console.warn('⚠️ Email notification failed:', emailResponse.status, errorText);
+                }
             }
         } catch (emailError) {
             console.error('⚠️ EmailJS error:', emailError);
