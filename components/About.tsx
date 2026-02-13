@@ -18,21 +18,6 @@ import myPhoto from "../app/assets/namanKumar.png";
 const About = () => {
   const skillCategories = [
     {
-      title: "Programming Languages",
-      iconType: "Code",
-      color: "from-blue-500 to-cyan-500",
-      skills: [
-        { name: "Rust", level: 85 },
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 88 },
-        { name: "Solidity", level: 85 },
-        { name: "Go", level: 80 },
-        { name: "SQL", level: 85 },
-        { name: "C", level: 75 },
-        { name: "Java", level: 80 },
-      ],
-    },
-    {
       title: "Backend Technologies",
       iconType: "Cpu",
       color: "from-green-500 to-emerald-500",
@@ -45,6 +30,32 @@ const About = () => {
         { name: "Microservices", level: 85 },
         { name: "Nest.js", level: 82 },
         { name: "PM2", level: 85 },
+      ],
+    },
+    {
+      title: "Databases",
+      iconType: "Database",
+      color: "from-teal-500 to-cyan-500",
+      skills: [
+        { name: "MongoDB", level: 85 },
+        { name: "PostgreSQL", level: 88 },
+        { name: "Redis", level: 80 },
+        { name: "Firebase", level: 85 },
+      ],
+    },
+    {
+      title: "Programming Languages",
+      iconType: "Code",
+      color: "from-blue-500 to-cyan-500",
+      skills: [
+        { name: "Rust", level: 85 },
+        { name: "JavaScript", level: 90 },
+        { name: "TypeScript", level: 88 },
+        { name: "Solidity", level: 85 },
+        { name: "Go", level: 80 },
+        { name: "SQL", level: 85 },
+        { name: "C", level: 75 },
+        { name: "Java", level: 80 },
       ],
     },
     {
@@ -83,17 +94,6 @@ const About = () => {
         { name: "Docker", level: 85 },
         { name: "Kubernetes", level: 80 },
         { name: "AWS", level: 82 },
-      ],
-    },
-    {
-      title: "Databases",
-      iconType: "Database",
-      color: "from-teal-500 to-cyan-500",
-      skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "PostgreSQL", level: 88 },
-        { name: "Redis", level: 80 },
-        { name: "Firebase", level: 85 },
       ],
     },
   ];
@@ -461,11 +461,10 @@ const About = () => {
                         className="relative flex gap-4 sm:gap-6 group"
                       >
                         <div
-                          className={`relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center border-2 transition-all duration-300 ${
-                            item.status === "current"
+                          className={`relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center border-2 transition-all duration-300 ${item.status === "current"
                               ? "bg-accent shadow-lg shadow-accent/25"
                               : "bg-accent border-highlight/30"
-                          }`}
+                            }`}
                         >
                           <div className="text-black">
                             {item.iconType === "GraduationCap" && (
@@ -486,11 +485,10 @@ const About = () => {
                         <div className="flex-grow min-w-0 pt-1 sm:pt-2">
                           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
                             <span
-                              className={`inline-block px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${
-                                item.status === "current"
+                              className={`inline-block px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${item.status === "current"
                                   ? "bg-accent/20 text-accent border-accent/30"
                                   : "bg-highlight/20 text-highlight border-highlight/30"
-                              }`}
+                                }`}
                             >
                               {item.year}
                             </span>

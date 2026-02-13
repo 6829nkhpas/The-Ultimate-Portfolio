@@ -167,20 +167,27 @@ const Hero = () => {
               >
                 <div className="relative">
                   <p className="text-xl sm:text-2xl text-textLight leading-relaxed font-medium">
-                    Crafting <span className="text-accent">End-to-End Web</span> &
+                    Building{" "}
+                    <span className="text-green-400">Scalable Backend Systems</span>{" "}
+                    &{" "}
                     <span className="text-highlight">
-                      {" "}
                       Blockchain Solutions
                     </span>
                   </p>
                 </div>
 
                 <p className="text-base sm:text-lg text-textMuted/90 leading-relaxed max-w-2xl">
-                  Experienced Full Stack and Blockchain Developer with over 2 years
-                  of expertise in building complete web applications from frontend
-                  to backend. Specialized in creating scalable, secure, and
-                  high-performance solutions across the entire technology stack,
-                  with deep expertise in blockchain and cloud computing.
+                  Backend & Blockchain Developer with 2+ years of expertise in
+                  architecting scalable server-side solutions. Built APIs serving{" "}
+                  <span className="text-accent font-semibold">1000+ concurrent users</span>,
+                  optimized databases reducing latency by{" "}
+                  <span className="text-accent font-semibold">40%</span>, and
+                  deployed{" "}
+                  <span className="text-accent font-semibold">20+ smart contracts</span>{" "}
+                  with a{" "}
+                  <span className="text-accent font-semibold">99% success rate</span>.
+                  Specialized in Node.js, MongoDB, PostgreSQL, and microservices
+                  architecture.
                 </p>
               </motion.div>
 
