@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import BackendShowcase from "@/components/BackendShowcase";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import OpenSourceContributions from "@/components/OpenSourceContributions";
@@ -119,6 +120,10 @@ export default function Home() {
 
                 {/* About Section */}
                 <About />
+
+                {/* Backend Showcase Section - NEW */}
+                <BackendShowcase />
+
                 {/* Horizontal Rule */}
                 <div className="w-full h-1 bg-gradient-to-r from-accent to-highlight my-4" />
 
