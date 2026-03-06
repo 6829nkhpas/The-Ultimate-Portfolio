@@ -21,6 +21,27 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 5,
+      title: "High-Performance Rust DEX",
+      category: "Blockchain",
+      description: "Production-grade, high-performance distributed cryptocurrency exchange",
+      longDescription:
+        "Designed and specified a high-performance Rust + WebAssembly Decentralized Exchange (DEX). It features a deterministic matching engine capable of processing 100,000 orders/sec with sub-10ms trade execution latency. The scalable architecture is built on event sourcing and microservices, incorporating multi-signature wallet controls and proof-of-reserves.",
+      image: null,
+      technologies: ["Rust", "WebAssembly", "Microservices", "PostgreSQL", "Kafka", "Redis", "Event Sourcing"],
+      features: [
+        "100,000 orders/sec throughput",
+        "< 10ms trade execution latency",
+        "Deterministic matching engine",
+        "Event sourcing and microservices pattern",
+        "Multi-signature security controls",
+      ],
+      githubUrl: "https://github.com/6829nkhpas/DEX",
+      liveUrl: null,
+      status: "Development",
+      featured: true,
+    },
+    {
       id: 1,
       title: "Blockchain Based Voting System",
       category: "Governance",
@@ -240,9 +261,8 @@ const Projects = () => {
                   whileHover={{ y: -8 }}
                   onHoverStart={() => setHoveredProject(project.id)}
                   onHoverEnd={() => setHoveredProject(null)}
-                  className={`relative group cursor-pointer ${
-                    project.featured ? "md:col-span-2 lg:col-span-2" : ""
-                  }`}
+                  className={`relative group cursor-pointer ${project.featured ? "md:col-span-2 lg:col-span-2" : ""
+                    }`}
                   onClick={() => setSelectedProject(project.id)}
                 >
                   <div className="relative h-full bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-white/[0.05] hover:border-accent/30 hover:shadow-card-hover">
@@ -271,9 +291,8 @@ const Projects = () => {
 
                     {/* Project Image */}
                     <div
-                      className={`relative ${
-                        project.featured ? "h-64" : "h-48"
-                      } overflow-hidden`}
+                      className={`relative ${project.featured ? "h-64" : "h-48"
+                        } overflow-hidden`}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent z-10" />
 
@@ -342,12 +361,12 @@ const Projects = () => {
                           ))}
                         {project.technologies.length >
                           (project.featured ? 5 : 3) && (
-                          <span className="px-3 py-1 text-xs text-textMuted border border-white/10 rounded-lg">
-                            +
-                            {project.technologies.length -
-                              (project.featured ? 5 : 3)}
-                          </span>
-                        )}
+                            <span className="px-3 py-1 text-xs text-textMuted border border-white/10 rounded-lg">
+                              +
+                              {project.technologies.length -
+                                (project.featured ? 5 : 3)}
+                            </span>
+                          )}
                       </div>
 
                       {/* Action Buttons */}
