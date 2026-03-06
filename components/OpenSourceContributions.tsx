@@ -28,59 +28,45 @@ interface Contribution {
 const OpenSourceContributions = () => {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-    // Placeholder data - Update with your actual contributions
     const contributions: Contribution[] = [
         {
             id: 1,
-            organization: "Open Healthcare Network",
-            repository: "ohcnetwork/care_fe",
-            commits: 45,
+            organization: "Zulip (GSoC)",
+            repository: "zulip/zulip",
+            commits: 5,
             description:
-                "Frontend application for patient care management. Contributed to UI improvements, bug fixes, and feature enhancements for healthcare management system.",
-            githubUrl: "https://github.com/ohcnetwork/care_fe",
-            status: "Active",
-            technologies: ["TypeScript", "React", "Tailwind CSS"],
+                "Google Summer of Code contribution. Optimized Attachment objects by replacing the full messages field with message_ids, reducing API payload sizes and improving data fetching efficiency.",
+            githubUrl: "https://github.com/zulip/zulip/pull/38052",
+            status: "Completed",
+            technologies: ["Python", "Django", "TypeScript"],
             featured: true,
-            contributionType: "UI/UX Development",
+            contributionType: "API & Backend Optimization",
         },
         {
             id: 2,
-            organization: "Open Healthcare Network",
-            repository: "ohcnetwork/care",
-            commits: 28,
+            organization: "Zulip (GSoC)",
+            repository: "zulip/zulip",
+            commits: 3,
             description:
-                "Backend Django application for healthcare management. Fixed critical bugs and improved API endpoints for better performance.",
-            githubUrl: "https://github.com/ohcnetwork/care",
+                "Google Summer of Code contribution. Enhanced the WebSocket event system to dispatch real-time notifications to all active recipients immediately upon attachment deletion.",
+            githubUrl: "https://github.com/zulip/zulip/pull/38054",
             status: "Active",
-            technologies: ["Python", "Django", "PostgreSQL"],
-            featured: false,
-            contributionType: "Backend Development",
+            technologies: ["Python", "Django", "WebSockets"],
+            featured: true,
+            contributionType: "Real-time Event System",
         },
         {
             id: 3,
-            organization: "Blockchain Community",
-            repository: "ethereum/solidity",
-            commits: 12,
+            organization: "Open Healthcare Network (GSoC)",
+            repository: "ohcnetwork/care_fe",
+            commits: 6,
             description:
-                "Documentation improvements and bug reports for Solidity compiler. Enhanced developer experience through better examples.",
-            githubUrl: "https://github.com/ethereum/solidity",
-            status: "Ongoing",
-            technologies: ["Solidity", "Documentation"],
-            featured: false,
-            contributionType: "Documentation",
-        },
-        {
-            id: 4,
-            organization: "Web3 Foundation",
-            repository: "rust-blockchain-lib",
-            commits: 35,
-            description:
-                "Contributed to Rust-based blockchain library with performance optimizations and new cryptographic features.",
-            githubUrl: "#",
+                "Google Summer of Code contribution. Resolved complex UI alignment issues by correcting component execution order and implementing robust conditional rendering rules.",
+            githubUrl: "https://github.com/ohcnetwork/care_fe/pull/14958",
             status: "Completed",
-            technologies: ["Rust", "Blockchain", "Cryptography"],
-            featured: true,
-            contributionType: "Core Development",
+            technologies: ["React", "TypeScript", "Tailwind CSS"],
+            featured: false,
+            contributionType: "UI/UX Bug Resolution",
         },
     ];
 
